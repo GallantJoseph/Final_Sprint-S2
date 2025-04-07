@@ -1,6 +1,6 @@
 [
   {
-    "id": "0001",
+    "id": 1,
     "name": "Ryzen 5 9600X",
     "description": "Ryzen 5 9000 Series (Zen 5), 6 Cores, 3.9 GHz, Radeon Graphics",
     "price": 319.0,
@@ -10,7 +10,7 @@
     "tdp": 65
   },
   {
-    "id": "0002",
+    "id": 2,
     "name": "Ryzen 7 9700X",
     "description": "Ryzen 7 9000 Series (Zen 5), 8 Cores, 3.8 GHz, Radeon Graphics",
     "price": 439.0,
@@ -20,7 +20,7 @@
     "tdp": 65
   },
   {
-    "id": "0003",
+    "id": 3,
     "name": "Ryzen 9 9950X",
     "description": "Ryzen 9 9000 Series (Zen 5) - 16 Cores, 4.3 GHz, Radeon Graphics",
     "price": 809.0,
@@ -30,7 +30,7 @@
     "tdp": 170
   },
   {
-    "id": "0004",
+    "id": 4,
     "name": "Intel Core Ultra 5 245K",
     "description": "Intel Core Ultra 5 245K (Series 2) Arrow Lake, 14 Cores (6P, 8E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
     "price": 429.0,
@@ -40,7 +40,7 @@
     "tdp": 125
   },
   {
-    "id": "0004",
+    "id": 5,
     "name": "Intel Core Ultra 7 265K",
     "description": "Intel Core Ultra 7 265K (Series 2) Arrow Lake, 20 Cores (8P, 12E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
     "price": 499.0,
@@ -50,7 +50,7 @@
     "tdp": 125
   },
   {
-    "id": "0004",
+    "id": 6,
     "name": "Intel Core Ultra 9 285K",
     "description": "Intel Core Ultra 9 285K (Series 2) Arrow Lake, 24 Cores (8P, 16E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
     "price": 829.0,

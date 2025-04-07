@@ -1,6 +1,6 @@
 [
   {
-    "id": "0001",
+    "id": 1,
     "name": "ASRock B850M-X",
     "description": "ASRock B850M-X - Supports Ryzen 7000, 8000, and 9000 Series Processors",
     "price": 159.99,
@@ -12,7 +12,7 @@
     "ram-sockets": 2
   },
   {
-    "id": "0002",
+    "id": 2,
     "name": "ASUS PRIME B840-PLUS WiFi",
     "description": "ASUS PRIME B840-PLUS WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
     "price": 249.99,
@@ -24,27 +24,27 @@
     "ram-sockets": 4
   },
   {
-    "id": "0003",
-    "name": "",
-    "description": "",
-    "price": 0.09,
+    "id": 3,
+    "name": "ASUS PRIME H810M-A-CSM",
+    "description": "ASUS PRIME H810M-A-CSM - Supports Intel Core Ultra (Series 2)",
+    "price": 179.99,
     "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-    "brand": "",
+    "brand": "Asus",
     "cpu-brand": "Intel",
     "socket-type": "LGA 1851",
     "ram-type": "DDR5",
     "ram-sockets": 2
   },
   {
-    "id": "0004",
-    "name": "",
-    "description": "",
-    "price": 0.09,
+    "id": 4,
+    "name": "MSI PRO B860M-A WiFi",
+    "description": "MSI PRO B860M-A WiFi - Supports Intel Core Ultra (Series 2)",
+    "price": 209.99,
     "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-    "brand": "",
+    "brand": "MSI",
     "cpu-brand": "Intel",
     "socket-type": "LGA 1851",
     "ram-type": "DDR5",
-    "ram-sockets": 2
+    "ram-sockets": 4
   }
 ]
