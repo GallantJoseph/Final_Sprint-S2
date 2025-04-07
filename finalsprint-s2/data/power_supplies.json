@@ -1,0 +1,22 @@
+[
+  {
+    "id": "0001",
+    "name": "name",
+    "description": "description",
+    "price": 0.0,
+    "image": "../src/assets/image.png",
+    "brand": "MSI",
+    "power-output": "500",
+    "efficiency": "80+Gold"
+  },
+  {
+    "id": "0001",
+    "name": "name",
+    "description": "description",
+    "price": 0.0,
+    "image": "../src/assets/image.png",
+    "brand": "MSI",
+    "power-output": "500",
+    "efficiency": "80+Gold"
+  }
+]

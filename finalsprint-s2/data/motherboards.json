@@ -1,0 +1,50 @@
+[
+  {
+    "id": "0001",
+    "name": "ASRock B850M-X",
+    "description": "ASRock B850M-X - Supports Ryzen 7000, 8000, and 9000 Series Processors",
+    "price": 159.99,
+    "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+    "brand": "ASRock",
+    "cpu-brand": "AMD",
+    "socket-type": "AM5",
+    "ram-type": "DDR5",
+    "ram-sockets": 2
+  },
+  {
+    "id": "0002",
+    "name": "ASUS PRIME B840-PLUS WiFi",
+    "description": "ASUS PRIME B840-PLUS WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
+    "price": 249.99,
+    "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+    "brand": "Asus",
+    "cpu-brand": "AMD",
+    "socket-type": "AM5",
+    "ram-type": "DDR5",
+    "ram-sockets": 4
+  },
+  {
+    "id": "0003",
+    "name": "",
+    "description": "",
+    "price": 0.09,
+    "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+    "brand": "",
+    "cpu-brand": "Intel",
+    "socket-type": "LGA 1851",
+    "ram-type": "DDR5",
+    "ram-sockets": 2
+  },
+  {
+    "id": "0004",
+    "name": "",
+    "description": "",
+    "price": 0.09,
+    "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+    "brand": "",
+    "cpu-brand": "Intel",
+    "socket-type": "LGA 1851",
+    "ram-type": "DDR5",
+    "ram-sockets": 2
+  }
+]
