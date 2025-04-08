@@ -1,0 +1,64 @@
+.homecontainer {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: black;
+}
+
+.homesection,
+.pcparts {
+  background-color: #333;
+  border-radius: 16px;
+  border: 8px solid grey;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  width: 85%;
+  margin: auto 20px;
+  margin-bottom: 20px;
+}
+
+.homesection h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.homesection p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.shopbutton {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.shopbutton:hover {
+  background-color: #0056b3;
+}
+
+section {
+  margin: 50px 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}

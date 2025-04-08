@@ -1,4 +1,49 @@
+import React from "react";
+import "./Home.css";
+import "../App.css";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="homecontainer">
+      <header className="homesection">
+        <h1>Welcome to Codebrew PC Building Inc.</h1>
+        <p>We've been building PCs one byte at a time since 2025!</p>
+        <button className="shopbutton">Shop Now</button>
+      </header>
+
+      <section className="homesection">
+        <h1>Meet Our Staff!</h1>
+        <p>
+          We have a dedicated team with a passion for technology and Pc building
+        </p>
+      </section>
+
+      <section className="pcparts">
+        <h2>Premium PC Parts</h2>
+        <p>
+          We offer the latest and best PC parts for gamers, streamers, and
+          professionals. Choose from a wide selection of graphics cards,
+          processors, memory, and more!
+        </p>
+        <button className="shopbutton">Browse PC Parts</button>
+      </section>
+
+      <section className="pcparts">
+        <h2>Build Your PC</h2>
+        <p>
+          Whether you want to build your own PC or have us build it for you, we
+          offer a seamless process to get your dream machine up and running.
+          Choose your components and we'll take care of the rest, or pick a DIY
+          kit and build it yourself!
+        </p>
+        <button className="shopbutton">Build Your PC</button>
+      </section>
+
+      <footer className="footer">
+        <p>© 2025 Codebrew PC Building Inc. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 };
+
 export default Home;
