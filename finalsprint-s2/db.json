@@ -252,132 +252,132 @@
         ]
       },
       {
-        "category": "",
+        "category": "cases",
         "data": [
           {
             "id": 1,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "Phanteks XT Pro Ultra",
+            "description": "Mid-Tower Gaming Chassis, 4x M25-140 Fans Included, High Airflow Performance Mesh, Tempered Glass Window, USB-C 3.2 Gen2, Black",
+            "price": 114.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "Phanteks",
+            "color": "black",
+            "MBCompatibility": "ATX / Micro ATX / Mini ITX"
           },
           {
             "id": 2,
-            "name": "",
-            "description": "s",
-            "price": 0,
+            "name": "Fractal Design North",
+            "description": "Tower PC Case - North Charcoal Black with Walnut Front and Dark Tinted TG Side Panel",
+            "price": 189.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "Fractal Design",
+            "color": "Charcoal Black",
+            "MBCompatibility": "ATX / Micro ATX / Mini ITX"
           },
           {
             "id": 3,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "SAMA SV02 ATX Computer Gaming PC Case",
+            "description": "Mid Tower White with 3 ARGB Fans Pre-Installed, Tempered Glass Transparent Side Panel,BTF Back Plug Motherboard Design",
+            "price": 92.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "SAMA",
+            "color": "black",
+            "MBCompatibility": "Micro ATX / ATX / ITX"
           },
           {
             "id": 4,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "Phanteks XT Pro",
+            "description": "Mid-Tower Gaming Chassis, High Airflow Performance Mesh, Tempered Glass Window, 1x M25-120 Black fan included, Black",
+            "price": 89.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "Phanteks",
+            "color": "black",
+            "MBCompatibility": "ATX, micro-ATX, mini-ITX, E-ATX (up to 280mm wide)"
           },
           {
             "id": 5,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "LIAN LI O11 ",
+            "description": "vision compact black color Aluminum / Steel / Tempered Glass ATX Mid Tower computer Case ----O11VPX",
+            "price": 179.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "LIAN LI",
+            "color": "black",
+            "MBCompatibility": "ATX / ITX / Micro ATX"
           },
           {
             "id": 6,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "Montech AIR 100",
+            "description": "ARGB MICRO-ATX Tower with Four ARGB Fans Pre Installed, Ultra-Minimalist Design, Fine Mesh Front Panel, High Airflow, Unique Side Swivel Tempered Glass",
+            "price": 89.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "Montech",
+            "color": "black",
+            "MBCompatibility": "Micro ATX/Mini ITX"
           }
         ]
       },
       {
-        "category": "",
+        "category": "ram",
         "data": [
           {
             "id": 1,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "CORSAIR Vengeance RGB",
+            "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model CMH32GX5M2N6400C36",
+            "price": 189.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "CORSAIR",
+            "socket-type": "DDR5",
+            "voltage": "1.35V"
           },
           {
             "id": 2,
-            "name": "",
-            "description": "s",
-            "price": 0,
+            "name": "CORSAIR Vengeance LPX",
+            "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR4 3200 (PC4 25600) Desktop Memory Model CMK32GX4M2E3200C16",
+            "price": 69.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "CORSAIR",
+            "socket-type": "DDR4",
+            "voltage": "1.35V"
           },
           {
             "id": 3,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "CORSAIR Vengeance",
+            "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop memory Model CMK96GX5M2B6400C32",
+            "price": 486.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "CORSAIR",
+            "socket-type": "DDR5",
+            "voltage": "1.4V"
           },
           {
             "id": 4,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "G.SKILL Trident Z5 RGB Series",
+            "description": "64GB (2 x 32GB) 288-Pin PC RAM DDR5 5600 Desktop Memory Model F5-5600J2834F32GX2-TZ5RK",
+            "price": 292.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "G.SKILL",
+            "socket-type": "DDR5",
+            "voltage": "1.35V"
           },
           {
             "id": 5,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "G.SKILL Trident Z5 Neo RGB Series",
+            "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 8000 (PC5 64000) Desktop Memory Model F5-8000J3848H16GX2-TZ5NR",
+            "price": 227.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "G.SKILL",
+            "socket-type": "DDR5",
+            "voltage": "1.45V"
           },
           {
             "id": 6,
-            "name": "",
-            "description": "",
-            "price": 0,
+            "name": "G.SKILL Ripjaws M5 RGB Series",
+            "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model F5-6400J3239F48GX2-RM5RK",
+            "price": 389.99,
             "image": "",
-            "brand": "",
-            "socket-type": "",
-            "tdp": 0
+            "brand": "G.SKILL",
+            "socket-type": "DDR5",
+            "voltage": "1.35V"
           }
         ]
       }
