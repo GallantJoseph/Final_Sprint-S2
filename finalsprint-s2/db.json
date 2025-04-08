@@ -179,6 +179,207 @@
             "ram-sockets": 4
           }
         ]
+      },
+      {
+        "category": "harddrive",
+        "data": [
+          {
+            "id": 1,
+            "name": "BarraCuda NE-ST8000DM004",
+            "description": "8TB 5400 RPM 256MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive Bare Drive",
+            "price": 194.99,
+            "image": "",
+            "brand": "Seagate",
+            "interface": "SATA",
+            "type": "hdd",
+            "capacity": "8 TB"
+          },
+          {
+            "id": 2,
+            "name": "WD Red Plus ",
+            "description": "10TB NAS Hard Disk Drive - 7200 RPM Class SATA 6Gb/s, CMR, 256MB Cache, 3.5 Inch - WD101EFBX-NE",
+            "price": 284.97,
+            "image": "",
+            "brand": "Western digital",
+            "interface": "SATA",
+            "type": "hdd",
+            "capacity": "10 TB"
+          },
+          {
+            "id": 3,
+            "name": "IronWolf Pro ST24000NT002 ",
+            "description": "24TB 7200 RPM 512MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive",
+            "price": 694.99,
+            "image": "",
+            "brand": "Seagate",
+            "interface": "SATA",
+            "type": "hdd",
+            "capacity": "24 TB"
+          },
+          {
+            "id": 4,
+            "name": "SAMSUNG 990 PRO",
+            "description": "SSD 1TB PCIe 4.0 M.2 2280 Internal Solid State Hard Drive",
+            "price": 169.97,
+            "image": "",
+            "brand": "SAMSUNG",
+            "interface": "M.2",
+            "type": "ssd",
+            "capacity": "1 TB"
+          },
+          {
+            "id": 5,
+            "name": "KingSpec SSD NX Series",
+            "description": "1TB Internal Solid State Drive M.2 NVMe",
+            "price": 67.99,
+            "image": "",
+            "brand": "KingSpec",
+            "interface": "M.2",
+            "type": "ssd",
+            "capacity": "1 TB"
+          },
+          {
+            "id": 6,
+            "name": "WD Blue SA510",
+            "description": "1TB SA510 2.5 Internal Solid State Drive SSD - WDS100T3B0A",
+            "price": 99.97,
+            "image": "",
+            "brand": "Western digital",
+            "interface": "M.2",
+            "type": "ssd",
+            "capacity": "1 TB"
+          }
+        ]
+      },
+      {
+        "category": "",
+        "data": [
+          {
+            "id": 1,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 2,
+            "name": "",
+            "description": "s",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 3,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 4,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 5,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 6,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          }
+        ]
+      },
+      {
+        "category": "",
+        "data": [
+          {
+            "id": 1,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 2,
+            "name": "",
+            "description": "s",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 3,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 4,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 5,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          },
+          {
+            "id": 6,
+            "name": "",
+            "description": "",
+            "price": 0,
+            "image": "",
+            "brand": "",
+            "socket-type": "",
+            "tdp": 0
+          }
+        ]
       }
     ]
   }
