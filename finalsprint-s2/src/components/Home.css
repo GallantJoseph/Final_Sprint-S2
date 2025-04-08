@@ -13,8 +13,7 @@
   padding: 50px;
   text-align: center;
   width: 85%;
-  margin: auto 20px;
-  margin-bottom: 20px;
+  margin: 20px auto 40px auto;
 }
 
 .homesection h1 {
@@ -35,7 +34,6 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  text-transform: uppercase;
 }
 
 .shopbutton:hover {

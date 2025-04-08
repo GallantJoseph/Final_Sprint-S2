@@ -36,7 +36,7 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <footer className="contact-footer">
+      <footer>
         <p>© 2025 Ultimate PC Shop. All rights reserved.</p>
       </footer>
     </div>

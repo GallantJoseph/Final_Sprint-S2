@@ -14,7 +14,7 @@ const Home = () => {
       <section className="homesection">
         <h1>Meet Our Staff!</h1>
         <p>
-          We have a dedicated team with a passion for technology and Pc building
+          We have a dedicated team with a passion for technology and PC building
         </p>
       </section>
 
@@ -39,7 +39,7 @@ const Home = () => {
         <button className="shopbutton">Build Your PC</button>
       </section>
 
-      <footer className="footer">
+      <footer>
         <p>© 2025 Codebrew PC Building Inc. All rights reserved.</p>
       </footer>
     </div>

@@ -20,3 +20,13 @@
   font-size: 2rem;
   padding: 0;
 }
+
+#main-nav a {
+  font-weight: 500;
+  color: white;
+  text-decoration: inherit;
+}
+
+#main-nav a:hover {
+  color: orange;
+}

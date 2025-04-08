@@ -9,361 +9,362 @@
   ],
   "products": [
     {
+      "id": 1,
       "category": "cpu",
-      "data": [
-        {
-          "id": 1,
-          "name": "Ryzen 5 9600X",
-          "description": "Ryzen 5 9000 Series (Zen 5), 6 Cores, 3.9 GHz, Radeon Graphics",
-          "price": 319.0,
-          "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-          "brand": "AMD",
-          "socket-type": "AM5",
-          "tdp": 65
-        },
-        {
-          "id": 2,
-          "name": "Ryzen 7 9700X",
-          "description": "Ryzen 7 9000 Series (Zen 5), 8 Cores, 3.8 GHz, Radeon Graphics",
-          "price": 439.0,
-          "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-          "brand": "AMD",
-          "socket-type": "AM5",
-          "tdp": 65
-        },
-        {
-          "id": 3,
-          "name": "Ryzen 9 9950X",
-          "description": "Ryzen 9 9000 Series (Zen 5) - 16 Cores, 4.3 GHz, Radeon Graphics",
-          "price": 809.0,
-          "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-          "brand": "AMD",
-          "socket-type": "AM5",
-          "tdp": 170
-        },
-        {
-          "id": 4,
-          "name": "Intel Core Ultra 5 245K",
-          "description": "Intel Core Ultra 5 245K (Series 2) Arrow Lake, 14 Cores (6P, 8E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
-          "price": 429.0,
-          "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
-          "brand": "Intel",
-          "socket-type": "LGA 1851",
-          "tdp": 125
-        },
-        {
-          "id": 5,
-          "name": "Intel Core Ultra 7 265K",
-          "description": "Intel Core Ultra 7 265K (Series 2) Arrow Lake, 20 Cores (8P, 12E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
-          "price": 499.0,
-          "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
-          "brand": "Intel",
-          "socket-type": "LGA 1851",
-          "tdp": 125
-        },
-        {
-          "id": 6,
-          "name": "Intel Core Ultra 9 285K",
-          "description": "Intel Core Ultra 9 285K (Series 2) Arrow Lake, 24 Cores (8P, 16E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
-          "price": 829.0,
-          "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
-          "brand": "Intel",
-          "socket-type": "LGA 1851",
-          "tdp": 125
-        }
-      ]
+      "name": "Ryzen 5 9600X",
+      "description": "Ryzen 5 9000 Series (Zen 5), 6 Cores, 3.9 GHz, Radeon Graphics",
+      "price": 319.0,
+      "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
+      "brand": "AMD",
+      "socket-type": "AM5",
+      "tdp": 65
     },
     {
+      "id": 2,
+      "category": "cpu",
+      "name": "Ryzen 7 9700X",
+      "description": "Ryzen 7 9000 Series (Zen 5), 8 Cores, 3.8 GHz, Radeon Graphics",
+      "price": 439.0,
+      "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
+      "brand": "AMD",
+      "socket-type": "AM5",
+      "tdp": 65
+    },
+    {
+      "id": 3,
+      "category": "cpu",
+      "name": "Ryzen 9 9950X",
+      "description": "Ryzen 9 9000 Series (Zen 5) - 16 Cores, 4.3 GHz, Radeon Graphics",
+      "price": 809.0,
+      "image": "../src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
+      "brand": "AMD",
+      "socket-type": "AM5",
+      "tdp": 170
+    },
+    {
+      "id": 4,
+      "category": "cpu",
+      "name": "Intel Core Ultra 5 245K",
+      "description": "Intel Core Ultra 5 245K (Series 2) Arrow Lake, 14 Cores (6P, 8E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
+      "price": 429.0,
+      "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
+      "brand": "Intel",
+      "socket-type": "LGA 1851",
+      "tdp": 125
+    },
+    {
+      "id": 5,
+      "category": "cpu",
+      "name": "Intel Core Ultra 7 265K",
+      "description": "Intel Core Ultra 7 265K (Series 2) Arrow Lake, 20 Cores (8P, 12E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
+      "price": 499.0,
+      "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
+      "brand": "Intel",
+      "socket-type": "LGA 1851",
+      "tdp": 125
+    },
+    {
+      "id": 6,
+      "category": "cpu",
+      "name": "Intel Core Ultra 9 285K",
+      "description": "Intel Core Ultra 9 285K (Series 2) Arrow Lake, 24 Cores (8P, 16E), 5.7 Ghz (P-Cores), 4.6 GHz (E-Cores), Intel Graphics",
+      "price": 829.0,
+      "image": "../src/assets/intel_alexandru-bogdan-ghita-eM6WUs4nKMY-unsplash.jpg",
+      "brand": "Intel",
+      "socket-type": "LGA 1851",
+      "tdp": 125
+    },
+    {
+      "id": 7,
       "category": "motherboard",
-      "data": [
-        {
-          "id": 1,
-          "name": "ASRock B850M-X",
-          "description": "ASRock B850M-X - Supports Ryzen 7000, 8000, and 9000 Series Processors",
-          "price": 159.99,
-          "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-          "brand": "ASRock",
-          "cpu-brand": "AMD",
-          "socket-type": "AM5",
-          "ram-type": "DDR5",
-          "ram-sockets": 2
-        },
-        {
-          "id": 2,
-          "name": "ASUS PRIME B840-PLUS WiFi",
-          "description": "ASUS PRIME B840-PLUS WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
-          "price": 249.99,
-          "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-          "brand": "Asus",
-          "cpu-brand": "AMD",
-          "socket-type": "AM5",
-          "ram-type": "DDR5",
-          "ram-sockets": 4
-        },
-        {
-          "id": 3,
-          "name": "ASUS PRIME H810M-A-CSM",
-          "description": "ASUS PRIME H810M-A-CSM - Supports Intel Core Ultra (Series 2)",
-          "price": 179.99,
-          "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-          "brand": "Asus",
-          "cpu-brand": "Intel",
-          "socket-type": "LGA 1851",
-          "ram-type": "DDR5",
-          "ram-sockets": 2
-        },
-        {
-          "id": 4,
-          "name": "MSI PRO B860M-A WiFi",
-          "description": "MSI PRO B860M-A WiFi - Supports Intel Core Ultra (Series 2)",
-          "price": 209.99,
-          "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
-          "brand": "MSI",
-          "cpu-brand": "Intel",
-          "socket-type": "LGA 1851",
-          "ram-type": "DDR5",
-          "ram-sockets": 4
-        }
-      ]
+      "name": "ASRock B850M-X",
+      "description": "ASRock B850M-X - Supports Ryzen 7000, 8000, and 9000 Series Processors",
+      "price": 159.99,
+      "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+      "brand": "ASRock",
+      "cpu-brand": "AMD",
+      "socket-type": "AM5",
+      "ram-type": "DDR5",
+      "ram-sockets": 2
     },
     {
+      "id": 8,
+      "category": "motherboard",
+      "name": "ASUS PRIME B840-PLUS WiFi",
+      "description": "ASUS PRIME B840-PLUS WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
+      "price": 249.99,
+      "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+      "brand": "Asus",
+      "cpu-brand": "AMD",
+      "socket-type": "AM5",
+      "ram-type": "DDR5",
+      "ram-sockets": 4
+    },
+    {
+      "id": 9,
+      "category": "motherboard",
+      "name": "ASUS PRIME H810M-A-CSM",
+      "description": "ASUS PRIME H810M-A-CSM - Supports Intel Core Ultra (Series 2)",
+      "price": 179.99,
+      "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+      "brand": "Asus",
+      "cpu-brand": "Intel",
+      "socket-type": "LGA 1851",
+      "ram-type": "DDR5",
+      "ram-sockets": 2
+    },
+    {
+      "id": 10,
+      "category": "motherboard",
+      "name": "MSI PRO B860M-A WiFi",
+      "description": "MSI PRO B860M-A WiFi - Supports Intel Core Ultra (Series 2)",
+      "price": 209.99,
+      "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
+      "brand": "MSI",
+      "cpu-brand": "Intel",
+      "socket-type": "LGA 1851",
+      "ram-type": "DDR5",
+      "ram-sockets": 4
+    },
+    {
+      "id": 11,
       "category": "psu",
-      "data": [
-        {
-          "id": 1,
-          "name": "Thermaltake Smart Series 500W",
-          "description": "Thermaltake Smart Series - 550 Watts, 80 Plus",
-          "price": 75.99,
-          "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
-          "brand": "Thermaltake",
-          "power-output": "500",
-          "modular": false,
-          "efficiency": "80Plus"
-        },
-        {
-          "id": 2,
-          "name": "CORSAIR CX550",
-          "description": "CORSAIR CX Series CX550 - 550 Watts, 80 Plus Bronze",
-          "price": 84.99,
-          "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
-          "brand": "Corsair",
-          "power-output": "550",
-          "modular": false,
-          "efficiency": "80PlusBronze"
-        },
-        {
-          "id": 3,
-          "name": "CORSAIR RM850",
-          "description": "CORSAIR RM850 CP-9020232-NA - 850 Watts, 80 Plus Gold",
-          "price": 154.99,
-          "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
-          "brand": "Corsair",
-          "power-output": "850",
-          "modular": true,
-          "efficiency": "80PlusGold"
-        }
-      ]
+      "name": "Thermaltake Smart Series 500W",
+      "description": "Thermaltake Smart Series - 550 Watts, 80 Plus",
+      "price": 75.99,
+      "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
+      "brand": "Thermaltake",
+      "power-output": "500",
+      "modular": false,
+      "efficiency": "80Plus"
     },
     {
+      "id": 12,
+      "category": "psu",
+      "name": "CORSAIR CX550",
+      "description": "CORSAIR CX Series CX550 - 550 Watts, 80 Plus Bronze",
+      "price": 84.99,
+      "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
+      "brand": "Corsair",
+      "power-output": "550",
+      "modular": false,
+      "efficiency": "80PlusBronze"
+    },
+    {
+      "id": 13,
+      "category": "psu",
+      "name": "CORSAIR RM850",
+      "description": "CORSAIR RM850 CP-9020232-NA - 850 Watts, 80 Plus Gold",
+      "price": 154.99,
+      "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
+      "brand": "Corsair",
+      "power-output": "850",
+      "modular": true,
+      "efficiency": "80PlusGold"
+    },
+    {
+      "id": 14,
       "category": "storage",
-      "data": [
-        {
-          "id": 1,
-          "name": "BarraCuda NE-ST8000DM004",
-          "description": "8TB 5400 RPM 256MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive Bare Drive",
-          "price": 194.99,
-          "image": "",
-          "brand": "Seagate",
-          "interface": "SATA",
-          "type": "hdd",
-          "capacity": "8 TB"
-        },
-        {
-          "id": 2,
-          "name": "WD Red Plus ",
-          "description": "10TB NAS Hard Disk Drive - 7200 RPM Class SATA 6Gb/s, CMR, 256MB Cache, 3.5 Inch - WD101EFBX-NE",
-          "price": 284.97,
-          "image": "",
-          "brand": "Western Digital",
-          "interface": "SATA",
-          "type": "hdd",
-          "capacity": "10 TB"
-        },
-        {
-          "id": 3,
-          "name": "IronWolf Pro ST24000NT002 ",
-          "description": "24TB 7200 RPM 512MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive",
-          "price": 694.99,
-          "image": "",
-          "brand": "Seagate",
-          "interface": "SATA",
-          "type": "hdd",
-          "capacity": "24 TB"
-        },
-        {
-          "id": 4,
-          "name": "SAMSUNG 990 PRO",
-          "description": "SSD 1TB PCIe 4.0 M.2 2280 Internal Solid State Hard Drive",
-          "price": 169.97,
-          "image": "",
-          "brand": "Samsung",
-          "interface": "M.2",
-          "type": "ssd",
-          "capacity": "1 TB"
-        },
-        {
-          "id": 5,
-          "name": "KingSpec SSD NX Series",
-          "description": "1TB Internal Solid State Drive M.2 NVMe",
-          "price": 67.99,
-          "image": "",
-          "brand": "KingSpec",
-          "interface": "M.2",
-          "type": "ssd",
-          "capacity": "1 TB"
-        },
-        {
-          "id": 6,
-          "name": "WD Blue SA510",
-          "description": "1TB SA510 2.5 Internal Solid State Drive SSD - WDS100T3B0A",
-          "price": 99.97,
-          "image": "",
-          "brand": "Western Digital",
-          "interface": "M.2",
-          "type": "ssd",
-          "capacity": "1 TB"
-        }
-      ]
+      "name": "BarraCuda NE-ST8000DM004",
+      "description": "8TB 5400 RPM 256MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive Bare Drive",
+      "price": 194.99,
+      "image": "",
+      "brand": "Seagate",
+      "interface": "SATA",
+      "type": "hdd",
+      "capacity": "8 TB"
     },
     {
+      "id": 15,
+      "category": "storage",
+      "name": "WD Red Plus ",
+      "description": "10TB NAS Hard Disk Drive - 7200 RPM Class SATA 6Gb/s, CMR, 256MB Cache, 3.5 Inch - WD101EFBX-NE",
+      "price": 284.97,
+      "image": "",
+      "brand": "Western Digital",
+      "interface": "SATA",
+      "type": "hdd",
+      "capacity": "10 TB"
+    },
+    {
+      "id": 16,
+      "category": "storage",
+      "name": "IronWolf Pro ST24000NT002 ",
+      "description": "24TB 7200 RPM 512MB Cache SATA 6.0Gb/s 3.5 Internal Hard Drive",
+      "price": 694.99,
+      "image": "",
+      "brand": "Seagate",
+      "interface": "SATA",
+      "type": "hdd",
+      "capacity": "24 TB"
+    },
+    {
+      "id": 17,
+      "category": "storage",
+      "name": "SAMSUNG 990 PRO",
+      "description": "SSD 1TB PCIe 4.0 M.2 2280 Internal Solid State Hard Drive",
+      "price": 169.97,
+      "image": "",
+      "brand": "Samsung",
+      "interface": "M.2",
+      "type": "ssd",
+      "capacity": "1 TB"
+    },
+    {
+      "id": 18,
+      "category": "storage",
+      "name": "KingSpec SSD NX Series",
+      "description": "1TB Internal Solid State Drive M.2 NVMe",
+      "price": 67.99,
+      "image": "",
+      "brand": "KingSpec",
+      "interface": "M.2",
+      "type": "ssd",
+      "capacity": "1 TB"
+    },
+    {
+      "id": 19,
+      "category": "storage",
+      "name": "WD Blue SA510",
+      "description": "1TB SA510 2.5 Internal Solid State Drive SSD - WDS100T3B0A",
+      "price": 99.97,
+      "image": "",
+      "brand": "Western Digital",
+      "interface": "M.2",
+      "type": "ssd",
+      "capacity": "1 TB"
+    },
+    {
+      "id": 20,
       "category": "cases",
-      "data": [
-        {
-          "id": 1,
-          "name": "Phanteks XT Pro Ultra",
-          "description": "Mid-Tower Gaming Chassis, 4x M25-140 Fans Included, High Airflow Performance Mesh, Tempered Glass Window, USB-C 3.2 Gen2, Black",
-          "price": 114.99,
-          "image": "",
-          "brand": "Phanteks",
-          "color": "Black",
-          "MBCompatibility": "ATX / Micro ATX / Mini ITX"
-        },
-        {
-          "id": 2,
-          "name": "Fractal Design North",
-          "description": "Tower PC Case - North Charcoal Black with Walnut Front and Dark Tinted TG Side Panel",
-          "price": 189.99,
-          "image": "",
-          "brand": "Fractal Design",
-          "color": "Charcoal Black",
-          "MBCompatibility": "ATX / Micro ATX / Mini ITX"
-        },
-        {
-          "id": 3,
-          "name": "SAMA SV02 ATX Computer Gaming PC Case",
-          "description": "Mid Tower White with 3 ARGB Fans Pre-Installed, Tempered Glass Transparent Side Panel,BTF Back Plug Motherboard Design",
-          "price": 92.99,
-          "image": "",
-          "brand": "SAMA",
-          "color": "Black",
-          "MBCompatibility": "Micro ATX / ATX / ITX"
-        },
-        {
-          "id": 4,
-          "name": "Phanteks XT Pro",
-          "description": "Mid-Tower Gaming Chassis, High Airflow Performance Mesh, Tempered Glass Window, 1x M25-120 Black fan included, Black",
-          "price": 89.99,
-          "image": "",
-          "brand": "Phanteks",
-          "color": "Black",
-          "MBCompatibility": "ATX, micro-ATX, mini-ITX, E-ATX (up to 280mm wide)"
-        },
-        {
-          "id": 5,
-          "name": "LIAN LI O11 ",
-          "description": "vision compact black color Aluminum / Steel / Tempered Glass ATX Mid Tower computer Case ----O11VPX",
-          "price": 179.99,
-          "image": "",
-          "brand": "LIAN LI",
-          "color": "Black",
-          "MBCompatibility": "ATX / ITX / Micro ATX"
-        },
-        {
-          "id": 6,
-          "name": "Montech AIR 100",
-          "description": "ARGB MICRO-ATX Tower with Four ARGB Fans Pre Installed, Ultra-Minimalist Design, Fine Mesh Front Panel, High Airflow, Unique Side Swivel Tempered Glass",
-          "price": 89.99,
-          "image": "",
-          "brand": "Montech",
-          "color": "Black",
-          "MBCompatibility": "Micro ATX/Mini ITX"
-        }
-      ]
+      "name": "Phanteks XT Pro Ultra",
+      "description": "Mid-Tower Gaming Chassis, 4x M25-140 Fans Included, High Airflow Performance Mesh, Tempered Glass Window, USB-C 3.2 Gen2, Black",
+      "price": 114.99,
+      "image": "",
+      "brand": "Phanteks",
+      "color": "Black",
+      "MBCompatibility": "ATX / Micro ATX / Mini ITX"
     },
     {
+      "id": 21,
+      "category": "cases",
+      "name": "Fractal Design North",
+      "description": "Tower PC Case - North Charcoal Black with Walnut Front and Dark Tinted TG Side Panel",
+      "price": 189.99,
+      "image": "",
+      "brand": "Fractal Design",
+      "color": "Charcoal Black",
+      "MBCompatibility": "ATX / Micro ATX / Mini ITX"
+    },
+    {
+      "id": 22,
+      "category": "cases",
+      "name": "SAMA SV02 ATX Computer Gaming PC Case",
+      "description": "Mid Tower White with 3 ARGB Fans Pre-Installed, Tempered Glass Transparent Side Panel,BTF Back Plug Motherboard Design",
+      "price": 92.99,
+      "image": "",
+      "brand": "SAMA",
+      "color": "Black",
+      "MBCompatibility": "Micro ATX / ATX / ITX"
+    },
+    {
+      "id": 23,
+      "category": "cases",
+      "name": "Phanteks XT Pro",
+      "description": "Mid-Tower Gaming Chassis, High Airflow Performance Mesh, Tempered Glass Window, 1x M25-120 Black fan included, Black",
+      "price": 89.99,
+      "image": "",
+      "brand": "Phanteks",
+      "color": "Black",
+      "MBCompatibility": "ATX, micro-ATX, mini-ITX, E-ATX (up to 280mm wide)"
+    },
+    {
+      "id": 24,
+      "category": "cases",
+      "name": "LIAN LI O11 ",
+      "description": "vision compact black color Aluminum / Steel / Tempered Glass ATX Mid Tower computer Case ----O11VPX",
+      "price": 179.99,
+      "image": "",
+      "brand": "LIAN LI",
+      "color": "Black",
+      "MBCompatibility": "ATX / ITX / Micro ATX"
+    },
+    {
+      "id": 25,
+      "category": "cases",
+      "name": "Montech AIR 100",
+      "description": "ARGB MICRO-ATX Tower with Four ARGB Fans Pre Installed, Ultra-Minimalist Design, Fine Mesh Front Panel, High Airflow, Unique Side Swivel Tempered Glass",
+      "price": 89.99,
+      "image": "",
+      "brand": "Montech",
+      "color": "Black",
+      "MBCompatibility": "Micro ATX/Mini ITX"
+    },
+    {
+      "id": 26,
       "category": "ram",
-      "data": [
-        {
-          "id": 1,
-          "name": "CORSAIR Vengeance RGB",
-          "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model CMH32GX5M2N6400C36",
-          "price": 189.99,
-          "image": "",
-          "brand": "CORSAIR",
-          "socket-type": "DDR5",
-          "voltage": 1.35
-        },
-        {
-          "id": 2,
-          "name": "CORSAIR Vengeance LPX",
-          "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR4 3200 (PC4 25600) Desktop Memory Model CMK32GX4M2E3200C16",
-          "price": 69.99,
-          "image": "",
-          "brand": "CORSAIR",
-          "socket-type": "DDR4",
-          "voltage": 1.35
-        },
-        {
-          "id": 3,
-          "name": "CORSAIR Vengeance",
-          "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop memory Model CMK96GX5M2B6400C32",
-          "price": 486.99,
-          "image": "",
-          "brand": "CORSAIR",
-          "socket-type": "DDR5",
-          "voltage": 1.4
-        },
-        {
-          "id": 4,
-          "name": "G.SKILL Trident Z5 RGB Series",
-          "description": "64GB (2 x 32GB) 288-Pin PC RAM DDR5 5600 Desktop Memory Model F5-5600J2834F32GX2-TZ5RK",
-          "price": 292.99,
-          "image": "",
-          "brand": "G.SKILL",
-          "socket-type": "DDR5",
-          "voltage": 1.35
-        },
-        {
-          "id": 5,
-          "name": "G.SKILL Trident Z5 Neo RGB Series",
-          "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 8000 (PC5 64000) Desktop Memory Model F5-8000J3848H16GX2-TZ5NR",
-          "price": 227.99,
-          "image": "",
-          "brand": "G.SKILL",
-          "socket-type": "DDR5",
-          "voltage": 1.45
-        },
-        {
-          "id": 6,
-          "name": "G.SKILL Ripjaws M5 RGB Series",
-          "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model F5-6400J3239F48GX2-RM5RK",
-          "price": 389.99,
-          "image": "",
-          "brand": "G.SKILL",
-          "socket-type": "DDR5",
-          "voltage": 1.35
-        }
-      ]
+      "name": "CORSAIR Vengeance RGB",
+      "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model CMH32GX5M2N6400C36",
+      "price": 189.99,
+      "image": "",
+      "brand": "CORSAIR",
+      "socket-type": "DDR5",
+      "voltage": 1.35
+    },
+    {
+      "id": 27,
+      "category": "ram",
+      "name": "CORSAIR Vengeance LPX",
+      "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR4 3200 (PC4 25600) Desktop Memory Model CMK32GX4M2E3200C16",
+      "price": 69.99,
+      "image": "",
+      "brand": "CORSAIR",
+      "socket-type": "DDR4",
+      "voltage": 1.35
+    },
+    {
+      "id": 28,
+      "category": "ram",
+      "name": "CORSAIR Vengeance",
+      "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop memory Model CMK96GX5M2B6400C32",
+      "price": 486.99,
+      "image": "",
+      "brand": "CORSAIR",
+      "socket-type": "DDR5",
+      "voltage": 1.4
+    },
+    {
+      "id": 29,
+      "category": "ram",
+      "name": "G.SKILL Trident Z5 RGB Series",
+      "description": "64GB (2 x 32GB) 288-Pin PC RAM DDR5 5600 Desktop Memory Model F5-5600J2834F32GX2-TZ5RK",
+      "price": 292.99,
+      "image": "",
+      "brand": "G.SKILL",
+      "socket-type": "DDR5",
+      "voltage": 1.35
+    },
+    {
+      "id": 30,
+      "category": "ram",
+      "name": "G.SKILL Trident Z5 Neo RGB Series",
+      "description": "32GB (2 x 16GB) 288-Pin PC RAM DDR5 8000 (PC5 64000) Desktop Memory Model F5-8000J3848H16GX2-TZ5NR",
+      "price": 227.99,
+      "image": "",
+      "brand": "G.SKILL",
+      "socket-type": "DDR5",
+      "voltage": 1.45
+    },
+    {
+      "id": 31,
+      "category": "ram",
+      "name": "G.SKILL Ripjaws M5 RGB Series",
+      "description": "96GB (2 x 48GB) 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model F5-6400J3239F48GX2-RM5RK",
+      "price": 389.99,
+      "image": "",
+      "brand": "G.SKILL",
+      "socket-type": "DDR5",
+      "voltage": 1.35
     }
   ]
 }
