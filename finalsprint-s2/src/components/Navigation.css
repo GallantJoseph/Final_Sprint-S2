@@ -1,6 +1,10 @@
 #main-nav {
   width: 85%;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 16px 32px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
 }
 
 #main-nav ul {
