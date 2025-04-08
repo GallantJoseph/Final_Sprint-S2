@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const PCBuilderCategory = ({ title, category, data }) => {
+const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const [productsData, setProductsData] = useState(null);
 
   useEffect(() => {
@@ -22,10 +22,12 @@ const PCBuilderCategory = ({ title, category, data }) => {
               <h3>{d.name}</h3>
               {d.description}
               <br />
-              <img src={d.image} width={200} />
+              <img src={d.image} width={"100%"} />
               <br />
               {d.price} <br />
-              <button key={index}>Select</button>
+              <button key={index} onClick={onClick}>
+                Select
+              </button>
             </li>
           ))}
       </div>

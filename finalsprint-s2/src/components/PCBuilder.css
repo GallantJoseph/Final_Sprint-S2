@@ -1,7 +1,11 @@
 .products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #333;
+  border-radius: 16px;
+}
+
+.products img {
   border-radius: 16px;
 }
 
