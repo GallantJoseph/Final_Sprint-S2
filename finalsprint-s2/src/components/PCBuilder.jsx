@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import PCBuilderCategory from "./pcbuilder/PCBuilderCategory";
+import "./PCBuilder.css";
 
 const PCBuilder = () => {
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -10,11 +12,32 @@ const PCBuilder = () => {
       const products = await response.json();
 
       setProductData(products);
-      console.dir(products);
     };
 
     fetchData();
   }, []);
-  return <div>PCBuilder</div>;
+  return (
+    <section id="pcbuilder-section">
+      <h1>PC Builder</h1>
+      <PCBuilderCategory
+        title="Power Supply"
+        category="psu"
+        data={productData}
+      />
+      <PCBuilderCategory title="Case" category="case" data={productData} />
+      <PCBuilderCategory
+        title="Motherboard"
+        category="motherboard"
+        data={productData}
+      />
+      <PCBuilderCategory title="Processor" category="cpu" data={productData} />
+      <PCBuilderCategory title="Memory" category="ram" data={productData} />
+      <PCBuilderCategory
+        title="Storage"
+        category="storage"
+        data={productData}
+      />
+    </section>
+  );
 };
 export default PCBuilder;

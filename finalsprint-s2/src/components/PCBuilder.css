@@ -1,0 +1,16 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #333;
+  border-radius: 16px;
+}
+
+.products li {
+  list-style-type: none;
+  margin: 16px;
+}
+
+.product-category {
+  display: grid;
+  grid-template-columns: 1fr;
+}

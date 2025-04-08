@@ -236,7 +236,7 @@
     },
     {
       "id": 20,
-      "category": "cases",
+      "category": "case",
       "name": "Phanteks XT Pro Ultra",
       "description": "Mid-Tower Gaming Chassis, 4x M25-140 Fans Included, High Airflow Performance Mesh, Tempered Glass Window, USB-C 3.2 Gen2, Black",
       "price": 114.99,
@@ -247,7 +247,7 @@
     },
     {
       "id": 21,
-      "category": "cases",
+      "category": "case",
       "name": "Fractal Design North",
       "description": "Tower PC Case - North Charcoal Black with Walnut Front and Dark Tinted TG Side Panel",
       "price": 189.99,
@@ -258,7 +258,7 @@
     },
     {
       "id": 22,
-      "category": "cases",
+      "category": "case",
       "name": "SAMA SV02 ATX Computer Gaming PC Case",
       "description": "Mid Tower White with 3 ARGB Fans Pre-Installed, Tempered Glass Transparent Side Panel,BTF Back Plug Motherboard Design",
       "price": 92.99,
@@ -269,7 +269,7 @@
     },
     {
       "id": 23,
-      "category": "cases",
+      "category": "case",
       "name": "Phanteks XT Pro",
       "description": "Mid-Tower Gaming Chassis, High Airflow Performance Mesh, Tempered Glass Window, 1x M25-120 Black fan included, Black",
       "price": 89.99,
@@ -280,7 +280,7 @@
     },
     {
       "id": 24,
-      "category": "cases",
+      "category": "case",
       "name": "LIAN LI O11 ",
       "description": "vision compact black color Aluminum / Steel / Tempered Glass ATX Mid Tower computer Case ----O11VPX",
       "price": 179.99,
@@ -291,7 +291,7 @@
     },
     {
       "id": 25,
-      "category": "cases",
+      "category": "case",
       "name": "Montech AIR 100",
       "description": "ARGB MICRO-ATX Tower with Four ARGB Fans Pre Installed, Ultra-Minimalist Design, Fine Mesh Front Panel, High Airflow, Unique Side Swivel Tempered Glass",
       "price": 89.99,
