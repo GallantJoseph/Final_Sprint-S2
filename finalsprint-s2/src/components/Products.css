@@ -1,0 +1,15 @@
+.productcategories {
+	background-color: #333;
+	border-radius: 16px;
+	border: 6px solid grey;
+	width: 85%;
+	margin: auto;
+	text-align: center;
+	margin-top: 10px;
+	padding: 5px 30px;
+}
+
+.checkboxes {
+	display: flex;
+	justify-content: space-between;
+}
