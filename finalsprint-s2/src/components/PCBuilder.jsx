@@ -38,11 +38,22 @@ const PCBuilder = () => {
     // console.log(pcBuild);
   };
 
+  const submitBuild = (evt) => {
+    evt.preventDefault();
+    alert("Submitted!");
+  };
+
   updateBuild(1);
 
   return (
     <section id="pcbuilder-section">
-      <h1>PC Builder</h1>
+      <div>
+        <h1>Codebrew PC Builder</h1>
+        <p>
+          Our advanced PC Builder will guide you step-by-step through the
+          building process.
+        </p>
+      </div>
       <PCBuilderCategory
         title="Power Supply"
         category="psu"
@@ -82,12 +93,31 @@ const PCBuilder = () => {
                         onClick={() => setRamSelected(true)}
                       />
                       {ramSelected && (
-                        <PCBuilderCategory
-                          title="Storage"
-                          category="storage"
-                          data={productData}
-                          onClick={() => setStorageSelected(true)}
-                        />
+                        <>
+                          <PCBuilderCategory
+                            title="Storage"
+                            category="storage"
+                            data={productData}
+                            onClick={() => setStorageSelected(true)}
+                          />
+                          {storageSelected && (
+                            <>
+                              <h3>You're almost done!</h3>
+                              <p>
+                                You have selected all the necessary components
+                                for your build. Click the Submit Build button
+                                once you're satisfied with your selection.
+                              </p>
+                              <button
+                                onClick={(evt) => {
+                                  submitBuild(evt);
+                                }}
+                              >
+                                Submit Build
+                              </button>
+                            </>
+                          )}
+                        </>
                       )}
                     </>
                   )}
