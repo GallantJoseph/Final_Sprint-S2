@@ -4,6 +4,7 @@ import "./PCBuilderCategory.css";
 const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const genericImageUrl = "../src/assets/board-453758_640.jpg";
   const [productsData, setProductsData] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     const filterData = async () => {
@@ -13,7 +14,11 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
     };
 
     filterData();
-  }, [data]);
+  }, [data, category]);
+  const handleSelect = (product) => {
+    setSelectedProduct(product);
+    onClick(product); // If you need to pass the selected product to the parent component
+  };
   return (
     <div className="product-category">
       <h2>{title}</h2>
@@ -32,7 +37,16 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
               <p className="price">
                 $ {d.price}
                 <br />
-                <button key={index} onClick={onClick}>
+                <button
+                  key={index}
+                  onClick={() => handleSelect(d)}
+                  className={`selectbutton ${
+                    selectedProduct?.id === d.id ? "selected" : ""
+                  }`}
+                >
+                  {selectedProduct?.id === d.id && (
+                    <span className="checkmark">✔</span>
+                  )}
                   Select
                 </button>
               </p>
