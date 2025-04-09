@@ -1,14 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import "../App.css";
 
 const Home = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleShopNow = () => {
+    navigate("/Products"); // Navigate to the Products page when button is clicked
+  };
+  const handleBuildNow = () => {
+    navigate("/PCBuilder");
+  };
+  const handleMeetStaff = () => {
+    navigate("/Contact");
+  };
   return (
     <div className="homecontainer">
       <header className="homesection">
         <h1>Welcome to Codebrew PC Building Inc.</h1>
         <p>We've been building PCs one byte at a time since 2025!</p>
-        <button className="shopbutton">Shop Now</button>
+        <button className="shopbutton" onClick={handleShopNow}>
+          Shop Now
+        </button>
       </header>
 
       <section className="homesection">
@@ -16,6 +30,9 @@ const Home = () => {
         <p>
           We have a dedicated team with a passion for technology and PC building
         </p>
+        <button className="shopbutton" onClick={handleMeetStaff}>
+          About Us
+        </button>
       </section>
 
       <section className="pcparts">
@@ -25,7 +42,9 @@ const Home = () => {
           professionals. Choose from a wide selection of graphics cards,
           processors, memory, and more!
         </p>
-        <button className="shopbutton">Browse PC Parts</button>
+        <button className="shopbutton" onClick={handleShopNow}>
+          Browse PC Parts
+        </button>
       </section>
 
       <section className="pcparts">
@@ -36,7 +55,9 @@ const Home = () => {
           Choose your components and we'll take care of the rest, or pick a DIY
           kit and build it yourself!
         </p>
-        <button className="shopbutton">Build Your PC</button>
+        <button className="shopbutton" onClick={handleBuildNow}>
+          Build Your PC
+        </button>
       </section>
 
       <footer>
