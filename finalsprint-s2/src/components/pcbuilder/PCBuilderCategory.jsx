@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./PCBuilderCategory.css";
 
 const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const genericImageUrl = "../src/assets/board-453758_640.jpg";
@@ -21,17 +22,20 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
           productsData.map((d, index) => (
             <li key={index}>
               <h3>{d.name}</h3>
-              {d.description}
+              <p className="description">{d.description}</p>
               <br />
               <img
                 src={d.image !== "" ? d.image : genericImageUrl}
                 width={"100%"}
               />
-              <br />
-              {d.price} <br />
-              <button key={index} onClick={onClick}>
-                Select
-              </button>
+
+              <p className="price">
+                $ {d.price}
+                <br />
+                <button key={index} onClick={onClick}>
+                  Select
+                </button>
+              </p>
             </li>
           ))}
       </div>
