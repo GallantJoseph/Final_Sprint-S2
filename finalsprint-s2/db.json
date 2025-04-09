@@ -1,12 +1,10 @@
 {
   "cart": [
     {
-      "category": "gpu",
       "id": "1",
       "quantity": 1
     },
     {
-      "category": "psu",
       "id": "1",
       "quantity": 1
     }
@@ -106,8 +104,8 @@
     {
       "id": "8",
       "category": "motherboard",
-      "name": "ASUS PRIME B840-PLUS WiFi",
-      "description": "ASUS PRIME B840-PLUS WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
+      "name": "Asus Prime B840-Plus WiFi",
+      "description": "Asus Prime B840-Plus WiFi - Supports Ryzen 7000, 8000, and 9000 Series Processors",
       "price": 249.99,
       "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
       "brand": "Asus",
@@ -119,8 +117,8 @@
     {
       "id": "9",
       "category": "motherboard",
-      "name": "ASUS PRIME H810M-A-CSM",
-      "description": "ASUS PRIME H810M-A-CSM - Supports Intel Core Ultra (Series 2)",
+      "name": "Asus Prime H810M-A-CSM",
+      "description": "Asus Prime H810M-A-CSM - Supports Intel Core Ultra (Series 2)",
       "price": 179.99,
       "image": "../src/assets/motherboard_gamercomp-ru-pDPUsqU4Kuk-unsplash.jpg",
       "brand": "Asus",
@@ -157,8 +155,8 @@
     {
       "id": "12",
       "category": "psu",
-      "name": "CORSAIR CX550",
-      "description": "CORSAIR CX Series CX550 - 550 Watts, 80 Plus Bronze",
+      "name": "Corsair CX550",
+      "description": "Corsair CX Series CX550 - 550 Watts, 80 Plus Bronze",
       "price": 84.99,
       "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
       "brand": "Corsair",
@@ -169,8 +167,8 @@
     {
       "id": "13",
       "category": "psu",
-      "name": "CORSAIR RM850",
-      "description": "CORSAIR RM850 CP-9020232-NA - 850 Watts, 80 Plus Gold",
+      "name": "Corsair RM850",
+      "description": "Corsair RM850 CP-9020232-NA - 850 Watts, 80 Plus Gold",
       "price": 154.99,
       "image": "../src/assets/psu_andrey-matveev-AV2PXsWOKdY-unsplash.jpg",
       "brand": "Corsair",

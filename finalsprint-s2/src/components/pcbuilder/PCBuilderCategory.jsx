@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const PCBuilderCategory = ({ title, category, data, onClick }) => {
+  const genericImageUrl = "../src/assets/board-453758_640.jpg";
   const [productsData, setProductsData] = useState(null);
 
   useEffect(() => {
@@ -22,7 +23,10 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
               <h3>{d.name}</h3>
               {d.description}
               <br />
-              <img src={d.image} width={"100%"} />
+              <img
+                src={d.image !== "" ? d.image : genericImageUrl}
+                width={"100%"}
+              />
               <br />
               {d.price} <br />
               <button key={index} onClick={onClick}>
