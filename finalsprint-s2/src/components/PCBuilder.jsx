@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PCBuilderCategory from "./pcbuilder/PCBuilderCategory";
+import { PCBuildContext } from "../context/PCBuild";
 import "./PCBuilder.css";
 
 const PCBuilder = () => {
@@ -11,6 +12,10 @@ const PCBuilder = () => {
   const [cpuSelected, setCpuSelected] = useState(false);
   const [ramSelected, setRamSelected] = useState(false);
   const [storageSelected, setStorageSelected] = useState(false);
+
+  // Context that stores the current PC Build data.
+  const pcBuild = useContext(PCBuildContext);
+  console.log(pcBuild.buildItems);
 
   useEffect(() => {
     const fetchData = async () => {
