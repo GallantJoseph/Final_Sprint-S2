@@ -15,10 +15,12 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
 
     filterData();
   }, [data, category]);
+
   const handleSelect = (product) => {
     setSelectedProduct(product);
     onClick(product); // If you need to pass the selected product to the parent component
   };
+
   return (
     <div className="product-category">
       <h2>{title}</h2>
