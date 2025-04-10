@@ -11,8 +11,8 @@ h3 {
   min-height: 56px;
 }
 
-li {
-  background-color: rgba(209, 208, 208, 0.366);
+.product-category li {
+  background-color: rgba(233, 233, 235, 0.366);
   border: black 1px solid;
   border-radius: 8px;
   padding: 20px;

@@ -1,7 +1,8 @@
 .contact-us-container {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: black;
+  background-color: transparent;
+  color: black;
 }
 
 .contact-header {
@@ -15,7 +16,6 @@
 
 .contact-header p {
   font-size: 1.2rem;
-  color: white;
 }
 
 .contact-info {
@@ -24,10 +24,9 @@
 }
 
 .info-item {
-  background-color: #333;
+  background-color: #333333ab;
   border-radius: 16px;
   border: 8px solid grey;
-  color: white;
   padding: 50px;
   text-align: center;
   width: 85%;
@@ -42,7 +41,6 @@
 
 .info-item p {
   font-size: 1.1rem;
-  color: #ffffff;
 }
 
 footer {
@@ -50,5 +48,4 @@ footer {
   margin-top: 50px;
   padding: 20px;
   background-color: #333;
-  color: white;
 }

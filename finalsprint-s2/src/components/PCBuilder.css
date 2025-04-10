@@ -1,7 +1,7 @@
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #333;
+  background-color: #333333ab;
   border-radius: 16px;
 }
 
