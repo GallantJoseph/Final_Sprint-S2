@@ -37,7 +37,7 @@ const ContactUs = () => {
       </section>
 
       <footer>
-        <p>© 2025 Ultimate PC Shop. All rights reserved.</p>
+        <p>© Codebrew PC Building Inc. All rights reserved.</p>
       </footer>
     </div>
   );
