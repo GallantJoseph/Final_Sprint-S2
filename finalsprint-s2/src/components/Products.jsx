@@ -1,9 +1,11 @@
 import "./Products.css";
 import { useState, useEffect } from "react";
+import Category from "./products/Category";
 
 function Products() {
 	const [prodData, setProdData] = useState(null);
 	const [selected, setSelected] = useState(7);
+	const [display, setDisplay] = useState(<Category type="all" />);
 
 	useEffect(() => {
 		async function getData() {
@@ -14,10 +16,12 @@ function Products() {
 		}
 
 		getData();
-	});
+	}, []);
 
 	function handleClick(btnID) {
+		const dict = ["cpu", "motherboard", "psu", "storage", "case", "ram", "gpu", "all"];
 		setSelected(btnID);
+		setDisplay(<Category type={dict[btnID]} />);
 	}
 
 	return (
@@ -51,6 +55,7 @@ function Products() {
 					</button>
 				</div>
 			</div>
+			{display}
 			<footer>
 				<p>© 2025 Codebrew PC Building Inc. All rights reserved.</p>
 			</footer>
