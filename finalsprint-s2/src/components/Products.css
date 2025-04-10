@@ -11,5 +11,16 @@
 
 .checkboxes {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+}
+
+.category {
+	background-color: rgba(209, 208, 208, 0.366);
+	border: 2px solid rgba(209, 208, 208, 0.366);
+	padding: 5px 15px;
+}
+
+.category:hover {
+	border: 2px solid orange;
+	background-color: rgba(209, 208, 208, 0.366);
 }
