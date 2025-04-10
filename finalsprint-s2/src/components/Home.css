@@ -1,14 +1,14 @@
 .homecontainer {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: black;
+  background-color: transparent;
 }
 
 .homesection,
 .pcparts {
-  background-color: #333;
+  background-color: #333333ab;
   border-radius: 16px;
-  border: 8px solid grey;
+  border: 8px solid rgba(144, 143, 143, 0.888);
   color: white;
   padding: 50px;
   text-align: center;
@@ -58,5 +58,7 @@ footer {
   margin-top: 50px;
   padding: 20px;
   background-color: #333;
+}
+footer p {
   color: white;
 }

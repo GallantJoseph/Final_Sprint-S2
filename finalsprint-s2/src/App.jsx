@@ -7,6 +7,8 @@ import Products from "./components/Products";
 import PCBuilder from "./components/PCBuilder";
 import Cart from "./components/Cart";
 import Contact from "./components/Contact";
+import Review from "./components/Review";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/PCBuilder" element={<PCBuilder />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/Review" element={<Review />}></Route>
+        <Route path="/ProductDetails" element={<ProductDetails />}></Route>
       </Routes>
     </BrowserRouter>
   );

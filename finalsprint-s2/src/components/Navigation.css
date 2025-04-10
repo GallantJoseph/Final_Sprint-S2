@@ -1,9 +1,9 @@
 #main-nav {
   width: 85%;
   margin: auto;
-  background-color: #333;
+  background: linear-gradient(to bottom right, #1d3c5d, #3b5981);
   border-radius: 16px;
-  border: 8px solid grey;
+  border: 8px solid rgba(255, 255, 255, 0.357);
   color: white;
   padding: 10px 30px;
   text-align: center;
@@ -18,7 +18,7 @@
   justify-items: center;
   list-style-type: none;
   font-size: 2rem;
-  padding: 0;
+  padding: 0px;
 }
 
 #main-nav a {
@@ -27,6 +27,11 @@
   text-decoration: inherit;
 }
 
-#main-nav a:hover {
-  color: orange;
+#main-nav a:hover,
+nav li:hover {
+  border-radius: 8px;
+  background-color: #4b5b70;
+}
+nav li {
+  padding: 2px 8px;
 }

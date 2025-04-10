@@ -1,7 +1,7 @@
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #333;
+  background-color: #333333ab;
   border-radius: 16px;
 }
 
@@ -14,7 +14,7 @@
   list-style-type: none;
   margin: 16px;
   grid-template-columns: 1fr;
-  /* grid-template-rows: 1fr 1fr auto 0.5fr 0.5fr; */
+  grid-template-rows: 1fr 1fr auto 1fr;
 }
 
 .product-category {

@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { PCBuildContext } from "../../context/PCBuild";
+import { Link } from "react-router-dom";
 import "./PCBuilderCategory.css";
 
 const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const genericImageUrl = "../src/assets/board-453758_640.jpg";
   const [productsData, setProductsData] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Context that stores the current PC Build data.
+  const pcBuild = useContext(PCBuildContext);
 
   useEffect(() => {
     const filterData = async () => {
@@ -19,6 +24,9 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const handleSelect = (product) => {
     setSelectedProduct(product);
     onClick(product); // If you need to pass the selected product to the parent component
+
+    //console.log(pcBuild);
+    console.log(product.id);
   };
 
   return (
@@ -30,7 +38,7 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
             <li key={index}>
               <h3>{d.name}</h3>
               <p className="description">{d.description}</p>
-              <br />
+
               <img
                 src={d.image !== "" ? d.image : genericImageUrl}
                 width={"100%"}
@@ -52,6 +60,7 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
                   Select
                 </button>
               </p>
+              <Link to="/ProductDetails">Product Details</Link>
             </li>
           ))}
       </div>
