@@ -6,9 +6,9 @@
 }
 
 body {
-  background-color: black;
+  background: linear-gradient(to bottom right, #dbddde, #a1a1a2);
 }
 
 * {
-  color: white;
+  color: black;
 }
