@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import Review from "./components/Review";
 import ProductDetails from "./components/ProductDetails";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           element={<ProductDetails />}
         ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
