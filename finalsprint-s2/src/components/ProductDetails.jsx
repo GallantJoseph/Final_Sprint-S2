@@ -38,6 +38,7 @@ const ProductDetails = () => {
         src={productData.image !== "" ? productData.image : genericImageUrl}
         width={"200"}
       />
+      <p>Quantity on hand: {productData.quantity_on_hand}</p>
       <Link to={`/Products`}>Back</Link>
     </div>
   );

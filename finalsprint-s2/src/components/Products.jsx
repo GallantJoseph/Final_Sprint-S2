@@ -3,20 +3,8 @@ import { useState, useEffect } from "react";
 import Category from "./products/Category";
 
 function Products() {
-  const [prodData, setProdData] = useState(null);
   const [selected, setSelected] = useState(7);
   const [display, setDisplay] = useState(<Category type="all" />);
-
-  useEffect(() => {
-    async function getData() {
-      const res = await fetch("http://localhost:5000/products");
-      const dat = await res.json();
-
-      setProdData(dat);
-    }
-
-    getData();
-  }, []);
 
   function handleClick(btnID) {
     const dict = [

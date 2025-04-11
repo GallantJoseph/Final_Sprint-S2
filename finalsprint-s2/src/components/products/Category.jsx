@@ -36,6 +36,7 @@ function Category({ type }) {
           <h3 className="productname">{obj.name}</h3>
           <p className="productdescription">{obj.description}</p>
           <p className="productprice">${obj.price.toFixed(2)}</p>
+          {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
           <button
             className="addtocartbtn"
             onClick={() => handleAddToCart(obj.id)}
