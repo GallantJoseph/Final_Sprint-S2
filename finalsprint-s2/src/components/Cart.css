@@ -1,5 +1,5 @@
 .cartcontainer {
-  background-color: #333333ab;
+  background-color: #919191ab;
   border-radius: 16px;
   border: 8px solid rgba(144, 143, 143, 0.888);
   color: white;
@@ -7,7 +7,7 @@
   text-align: center;
   width: 85%;
   margin: 20px auto 40px auto;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
 .cartlist {
@@ -24,6 +24,7 @@
   padding: 16px;
   border-radius: 6px;
   border: 1px solid #ddd;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
 .cartpartname {

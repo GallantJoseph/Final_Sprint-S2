@@ -1,12 +1,14 @@
 .productcategories {
-  background-color: #333333ab;
+  background-color: #919191ab;
   border-radius: 16px;
   border: 6px solid grey;
   width: 85%;
   margin: auto;
   text-align: center;
   margin-top: 10px;
-  padding: 5px 30px;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
 .checkboxes {
@@ -18,6 +20,8 @@
   background-color: rgba(209, 208, 208, 0.366);
   border: 2px solid rgba(209, 208, 208, 0.366);
   padding: 5px 15px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.529);
 }
 
 .category:hover {
