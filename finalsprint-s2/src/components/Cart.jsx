@@ -2,29 +2,30 @@ import React, { useState } from "react";
 import "./Cart.css";
 
 const Cart = () => {
-  // Temp Fake data
   const [cartItems, setCartItems] = useState([
     {
       id: "1",
       name: "Hard drive",
       price: 199.99,
       quantity: 1,
+      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
     },
     {
       id: "2",
-      name: "case",
+      name: "Case",
       price: 99.99,
       quantity: 1,
+      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
     },
     {
       id: "3",
       name: "Monitor",
       price: 199.99,
       quantity: 1,
+      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
     },
   ]);
 
-  // Handle quantity change for the item
   const handleQuantityChange = (id, quantityChange) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -35,14 +36,13 @@ const Cart = () => {
     );
   };
 
-  // Handle removing an item from the cart
   const handleRemoveItem = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
     <>
-      <h2>Your Cart</h2>
+      <h2 className="cartheaders">Cart</h2>
       <div className="cartcontainer">
         {cartItems.length === 0 ? (
           <p className="emptycart">No items in your cart yet.</p>
@@ -50,13 +50,19 @@ const Cart = () => {
           <div className="cartlist">
             {cartItems.map((item) => (
               <div key={item.id} className="cartitem">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="cartitemimage"
+                />
+
                 <div className="cartpartname">{item.name}</div>
 
                 <div className="cartquantitycontrols">
                   <button onClick={() => handleQuantityChange(item.id, -1)}>
                     -
                   </button>
-                  <span>{item.quantity}</span>
+                  <span className="quantityNum">{item.quantity}</span>
                   <button onClick={() => handleQuantityChange(item.id, 1)}>
                     +
                   </button>
@@ -76,6 +82,30 @@ const Cart = () => {
             ))}
           </div>
         )}
+      </div>
+      <h2 className="cartheaders">PC Builder</h2>
+      <div className="cartcontainer">
+        {cartItems.length === 0 ? (
+          <p className="emptycart">No items in your build.</p>
+        ) : (
+          <div className="cartlist">
+            {cartItems.map((item) => (
+              <div key={item.id} className="cartitem">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="cartitemimage"
+                />
+
+                <div className="cartpartname">{item.name}</div>
+
+                <div className="cartprice">${item.price.toFixed(2)}</div>
+              </div>
+            ))}
+          </div>
+        )}
+        <br />
+        <button className="reviewbtn">Review Your Order</button>
       </div>
     </>
   );

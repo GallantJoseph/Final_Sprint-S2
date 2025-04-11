@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background-color: white;
   padding: 16px;
   border-radius: 6px;
   border: 1px solid #ddd;
@@ -65,4 +65,117 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+.cartcontainer {
+  background-color: #919191ab;
+  border-radius: 16px;
+  border: 8px solid rgba(144, 143, 143, 0.888);
+  color: white;
+  padding: 50px;
+  text-align: center;
+  width: 85%;
+  margin: 20px auto 40px auto;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
+
+.cartlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
+
+.cartpartname {
+  flex: 2;
+  font-weight: bold;
+}
+
+.cartquantitycontrols {
+  width: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.cartquantitycontrols button {
+  background-color: green;
+  color: white;
+  width: 30px;
+  padding: 4px 10px;
+  font-size: 1rem;
+}
+
+.quantityNum {
+  border: 1px solid black;
+  border-radius: 8px;
+  min-width: 30px;
+}
+.cartprice {
+  flex: 1;
+  text-align: right;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.cartremove {
+  margin-left: 10px;
+  background-color: red;
+  padding: 4px;
+  width: 30px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cartitemimage {
+  width: 40px;
+  height: 40px;
+  object-fit: fill;
+  transition: transform 0.5s ease;
+  border: none;
+}
+
+.cartitemimage:hover {
+  transform: scale(5);
+}
+.cartheaders {
+  text-align: center;
+  background-color: #919191ab;
+  border-radius: 16px;
+  border: 6px solid grey;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
+
+.reviewbtn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
+
+.reviewbtn:hover {
+  background-color: #0056b3;
 }

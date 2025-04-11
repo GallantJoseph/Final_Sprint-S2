@@ -13,11 +13,7 @@ function Category({ type }) {
       if (type === "all") {
         setFiltData(data);
       } else {
-        setFiltData(
-          data.filter((element) => {
-            return element.category === type;
-          })
-        );
+        setFiltData(data.filter((element) => element.category === type));
       }
     }
 
@@ -25,28 +21,67 @@ function Category({ type }) {
   }, [type]);
 
   const handleAddToCart = (id) => {
-    // logic for adding to cart (can be enhanced)
     console.log(`Product ${id} added to cart`);
   };
 
-  return filtData.map((obj) => (
-    <div key={obj.id} className="productcard">
-      <img className="productimage" src={obj.image} alt={obj.name} />
-      <div className="productinfo">
-        <h3 className="productname">{obj.name}</h3>
-        <p className="productdescription">{obj.description}</p>
-        <p className="productprice">${obj.price.toFixed(2)}</p>
-        {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
-        <Link to={`/ProductDetails/${obj.id}`}>Product Details</Link>
-        <button
-          className="addtocartbtn"
-          onClick={() => handleAddToCart(obj.id)}
-        >
-          Add to Cart
-        </button>
-      </div>
-    </div>
-  ));
+  if (type !== "all") {
+    return (
+      <>
+        <h2 className="categorytitle">{type.toUpperCase()}</h2>
+        {filtData.map((obj) => (
+          <div key={obj.id} className="productcard">
+            <img className="productimage" src={obj.image} alt={obj.name} />
+            <div className="productinfo">
+              <h3 className="productname">{obj.name}</h3>
+              <p className="productdescription">{obj.description}</p>
+              <p className="productprice">${obj.price.toFixed(2)}</p>
+              {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
+              <Link to={`/ProductDetails/${obj.id}`}>Product Details</Link>
+              <button
+                className="addtocartbtn"
+                onClick={() => handleAddToCart(obj.id)}
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </>
+    );
+  }
+
+  // For "all" categories
+  const categories = [...new Set(filtData.map((item) => item.category))];
+
+  return (
+    <>
+      {categories.map((cat) => (
+        <div key={cat}>
+          <h2 className="categorytitle">{cat.toUpperCase()}</h2>
+          {filtData
+            .filter((item) => item.category === cat)
+            .map((obj) => (
+              <div key={obj.id} className="productcard">
+                <img className="productimage" src={obj.image} alt={obj.name} />
+                <div className="productinfo">
+                  <h3 className="productname">{obj.name}</h3>
+                  <p className="productdescription">{obj.description}</p>
+                  <p className="productprice">${obj.price.toFixed(2)}</p>
+                  {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
+                  <Link to={`/ProductDetails/${obj.id}`}>Product Details</Link>
+                  <button
+                    className="addtocartbtn"
+                    onClick={() => handleAddToCart(obj.id)}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
+      ))}
+    </>
+  );
 }
 
 export default Category;
