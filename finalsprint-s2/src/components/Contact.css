@@ -24,14 +24,15 @@
 }
 
 .info-item {
-  background-color: #333333ab;
+  background-color: #919191ab;
   border-radius: 16px;
   border: 8px solid grey;
   padding: 50px;
   text-align: center;
   width: 85%;
   margin: auto 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
 .info-item h2 {
