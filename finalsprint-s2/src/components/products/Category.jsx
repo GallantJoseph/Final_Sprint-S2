@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Category.css";
 
 function Category({ type }) {
   const [filtData, setFiltData] = useState([]);
@@ -13,7 +14,7 @@ function Category({ type }) {
       } else {
         setFiltData(
           data.filter((element) => {
-            return element.category == type;
+            return element.category === type;
           })
         );
       }
@@ -22,19 +23,29 @@ function Category({ type }) {
     getData();
   }, [type]);
 
-  console.log(filtData);
-  return filtData.map((obj) => (
-    /*/ 
-			Anything here can be changed for better formatting
-			i just used a ul to get the data on screen
-		/*/
+  const handleAddToCart = (id) => {
+    // logic for adding to cart (can be enhanced)
+    console.log(`Product ${id} added to cart`);
+  };
 
-    <ul key={obj.id}>
-      <li>{obj.name}</li>
-      <li>{obj.description}</li>
-      <li>{obj.price.toFixed(2)}</li>
-      {/*/ <li><img src={obj.image} /></li> <-- uncomment when ready to format images /*/}
-    </ul>
+  return filtData.map((obj) => (
+    <>
+      <div key={obj.id} className="productcard">
+        <img className="productimage" src={obj.image} alt={obj.name} />
+        <div className="productinfo">
+          <h3 className="productname">{obj.name}</h3>
+          <p className="productdescription">{obj.description}</p>
+          <p className="productprice">${obj.price.toFixed(2)}</p>
+          <button
+            className="addtocartbtn"
+            onClick={() => handleAddToCart(obj.id)}
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </>
   ));
 }
+
 export default Category;
