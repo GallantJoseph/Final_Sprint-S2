@@ -60,7 +60,7 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
                   Select
                 </button>
               </p>
-              <Link to="/ProductDetails">Product Details</Link>
+              <Link to={`/ProductDetails/${d.id}`}>Product Details</Link>
             </li>
           ))}
       </div>

@@ -35,10 +35,6 @@ const ContactUs = () => {
           </p>
         </div>
       </section>
-
-      <footer>
-        <p>© Codebrew PC Building Inc. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import Review from "./components/Review";
 import ProductDetails from "./components/ProductDetails";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,8 +22,12 @@ function App() {
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/Review" element={<Review />}></Route>
-        <Route path="/ProductDetails" element={<ProductDetails />}></Route>
+        <Route
+          path="/ProductDetails/:productId"
+          element={<ProductDetails />}
+        ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
