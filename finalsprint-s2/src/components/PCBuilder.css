@@ -1,25 +1,72 @@
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
   background-color: #919191ab;
   border-radius: 16px;
   box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
-.products img {
-  border-radius: 16px;
-}
-
 .products li {
   display: grid;
+  grid-template-rows: auto auto auto;
   list-style-type: none;
-  margin: 16px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr auto 1fr;
-  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.529);
+  margin: 0;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.products img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .product-category {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 16px;
+}
+
+.products h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+
+.products p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+.product-header,
+.product-category h2 {
+  text-align: center;
+  background-color: #919191ab;
+  border-radius: 16px;
+  border: 6px solid grey;
+  width: 85%;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+  font-weight: 900;
+}
+.product-header {
+  background-image: url("../assets/back-jeshoots-com-sMKUYIasyDM-unsplash 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

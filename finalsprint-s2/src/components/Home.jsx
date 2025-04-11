@@ -17,7 +17,7 @@ const Home = () => {
   };
   return (
     <div className="homecontainer">
-      <header className="homesection">
+      <header className="homesection homeimg">
         <h1>Welcome to Codebrew PC Building Inc.</h1>
         <p>We've been building PCs one byte at a time since 2025!</p>
         <button className="shopbutton" onClick={handleBuildNow}>

@@ -17,13 +17,21 @@
   box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
 
+.homeimg {
+  background-image: url("../assets/back-jeshoots-com-sMKUYIasyDM-unsplash 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .homesection h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .homesection p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
 }
 

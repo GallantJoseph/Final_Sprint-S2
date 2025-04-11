@@ -52,7 +52,7 @@ const PCBuilder = () => {
 
   return (
     <section id="pcbuilder-section">
-      <div>
+      <div className="product-header">
         <h1>Codebrew PC Builder</h1>
         <p>
           Our advanced PC Builder will guide you step-by-step through the
