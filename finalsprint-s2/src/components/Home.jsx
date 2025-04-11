@@ -20,20 +20,10 @@ const Home = () => {
       <header className="homesection">
         <h1>Welcome to Codebrew PC Building Inc.</h1>
         <p>We've been building PCs one byte at a time since 2025!</p>
-        <button className="shopbutton" onClick={handleShopNow}>
+        <button className="shopbutton" onClick={handleBuildNow}>
           Shop Now
         </button>
       </header>
-
-      <section className="homesection">
-        <h1>Meet Our Staff!</h1>
-        <p>
-          We have a dedicated team with a passion for technology and PC building
-        </p>
-        <button className="shopbutton" onClick={handleMeetStaff}>
-          About Us
-        </button>
-      </section>
 
       <section className="pcparts">
         <h2>Premium PC Parts</h2>
