@@ -1,0 +1,31 @@
+.product {
+  display: grid;
+  width: 30vw;
+  margin: 32px auto 0px auto;
+  grid-template-columns: 1fr;
+  background-color: rgba(233, 233, 235, 0.366);
+  border: black 1px solid;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.product img {
+  margin: auto;
+}
+
+.product button,
+.product a {
+  min-width: 120px;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product a {
+  background-color: #333;
+}

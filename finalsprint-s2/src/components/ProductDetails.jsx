@@ -1,3 +1,4 @@
+import "./ProductDetails.css";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
@@ -31,7 +32,8 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className="product">
+      <Link to={`/Products`}>Back</Link>
       <h3>{productData.name}</h3>
       <p className="description">{productData.description}</p>
       <img
@@ -39,7 +41,7 @@ const ProductDetails = () => {
         width={"200"}
       />
       <p>Quantity on hand: {productData.quantity_on_hand}</p>
-      <Link to={`/Products`}>Back</Link>
+      <button>Add to Cart</button>
     </div>
   );
 };
