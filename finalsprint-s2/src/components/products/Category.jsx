@@ -35,14 +35,26 @@ function Category({ type }) {
               <h3 className="productname">{obj.name}</h3>
               <p className="productdescription">{obj.description}</p>
               <p className="productprice">${obj.price.toFixed(2)}</p>
-              {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
+              <p>
+                {obj.quantity_on_hand === 0 ? (
+                  <span className="outofstock">Out of Stock</span>
+                ) : (
+                  <span className="instock">Available</span>
+                )}
+              </p>
               <Link to={`/ProductDetails/${obj.id}`}>Product Details</Link>
-              <button
-                className="addtocartbtn"
-                onClick={() => handleAddToCart(obj.id)}
-              >
-                Add to Cart
-              </button>
+              {obj.quantity_on_hand === 0 ? (
+                <button className="addtocartdisabledbtn" disabled={true}>
+                  X
+                </button>
+              ) : (
+                <button
+                  className="addtocartbtn"
+                  onClick={() => handleAddToCart(obj.id)}
+                >
+                  Add to Cart
+                </button>
+              )}
             </div>
           </div>
         ))}
@@ -67,14 +79,26 @@ function Category({ type }) {
                   <h3 className="productname">{obj.name}</h3>
                   <p className="productdescription">{obj.description}</p>
                   <p className="productprice">${obj.price.toFixed(2)}</p>
-                  {obj.quantity_on_hand === 0 ? "Out of Stock" : "Available"}
+                  <p>
+                    {obj.quantity_on_hand === 0 ? (
+                      <span className="outofstock">Out of Stock</span>
+                    ) : (
+                      <span className="instock">Available</span>
+                    )}
+                  </p>
                   <Link to={`/ProductDetails/${obj.id}`}>Product Details</Link>
-                  <button
-                    className="addtocartbtn"
-                    onClick={() => handleAddToCart(obj.id)}
-                  >
-                    Add to Cart
-                  </button>
+                  {obj.quantity_on_hand === 0 ? (
+                    <button className="addtocartdisabledbtn" disabled={true}>
+                      X
+                    </button>
+                  ) : (
+                    <button
+                      className="addtocartbtn"
+                      onClick={() => handleAddToCart(obj.id)}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

@@ -45,7 +45,8 @@
   margin-bottom: 6px;
 }
 
-.addtocartbtn {
+.addtocartbtn,
+.addtocartdisabledbtn {
   align-self: flex-start;
   background-color: #3498db;
   color: white;
@@ -59,6 +60,19 @@
 
 .addtocartbtn:hover {
   background-color: #2980b9;
+}
+
+.addtocartdisabledbtn,
+.addtocartdisabledbtn:hover {
+  background-color: #700;
+}
+
+.instock {
+  color: #070;
+}
+
+.outofstock {
+  color: #700;
 }
 
 .categorytitle {
