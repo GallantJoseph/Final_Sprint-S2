@@ -116,20 +116,23 @@ const PCBuilder = () => {
                               />
                               {storageSelected && (
                                 <>
-                                  <h3>You're almost done!</h3>
-                                  <p>
-                                    You have selected all the necessary
-                                    components for your build. Click the Submit
-                                    Build button once you're satisfied with your
-                                    selection.
-                                  </p>
-                                  <button
-                                    onClick={(evt) => {
-                                      submitBuild(evt);
-                                    }}
-                                  >
-                                    Submit Build
-                                  </button>
+                                  <div className="product-submit">
+                                    <h3>You're almost done!</h3>
+                                    <p>
+                                      You have selected all the necessary
+                                      components for your build. Click the
+                                      Submit Build button once you're satisfied
+                                      with your selection.
+                                    </p>
+                                    <button
+                                      className="submitbtn"
+                                      onClick={(evt) => {
+                                        submitBuild(evt);
+                                      }}
+                                    >
+                                      Submit Build
+                                    </button>
+                                  </div>
                                 </>
                               )}
                             </>

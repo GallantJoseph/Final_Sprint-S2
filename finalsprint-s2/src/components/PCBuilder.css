@@ -70,3 +70,33 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.product-submit {
+  text-align: center;
+  background-color: #919191ab;
+  border-radius: 16px;
+  border: 6px solid grey;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+  font-weight: 900;
+}
+
+.submitbtn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+  margin-bottom: 30px;
+}
+
+.submitbtn:hover {
+  background-color: #0056b3;
+}
