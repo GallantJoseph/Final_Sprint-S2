@@ -32,6 +32,7 @@ const Review = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
+  // Scroll to the top of the page when the component is loaded for the first time
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);

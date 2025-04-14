@@ -1,4 +1,11 @@
-import { useEffect, useState } from "react";
+/*
+  Description: Final Sprint - Semester 2 - Codebrew PC Building Inc.
+  Authors:  -Joseph Gallant
+            -Justin Greenslade
+            -Ashton Dennis
+  Dates: April 7, 2025 - April 16, 2025
+*/
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navigation from "./components/Navigation";

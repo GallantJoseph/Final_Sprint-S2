@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
 import { PCBuildContext } from "../../context/PCBuild";
-import { Link } from "react-router-dom";
 import "./PCBuilderCategory.css";
 
 const PCBuilderCategory = ({ title, category, data, onClick }) => {

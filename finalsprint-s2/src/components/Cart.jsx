@@ -71,27 +71,31 @@ const Cart = () => {
       (item) => item.id === id
     )[0];
 
-    updCartItem = {
-      ...updCartItem,
-      quantity: updCartItem.quantity + quantityChange,
-    };
+    if (updCartItem.quantity + quantityChange > 0) {
+      updCartItem = {
+        ...updCartItem,
+        quantity: updCartItem.quantity + quantityChange,
+      };
 
-    const res = await fetch(`http://localhost:5000/cart/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(updCartItem),
-    });
+      const res = await fetch(`http://localhost:5000/cart/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(updCartItem),
+      });
 
-    // Update the useContext variable
-    cartDataContext.setCartItems((prevCartData) =>
-      prevCartData.map((item) =>
-        item.id === id
-          ? { ...item, id: id, quantity: item.quantity + quantityChange }
-          : item
-      )
-    );
+      // Update the useContext variable
+      cartDataContext.setCartItems((prevCartData) =>
+        prevCartData.map((item) =>
+          item.id === id
+            ? { ...item, id: id, quantity: item.quantity + quantityChange }
+            : item
+        )
+      );
+    } else if (updCartItem.quantity + quantityChange === 0) {
+      handleRemoveItem(id);
+    }
   };
 
   const handleRemoveItem = async (id) => {

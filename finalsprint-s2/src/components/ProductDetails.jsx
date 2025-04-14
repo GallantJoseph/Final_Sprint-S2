@@ -1,6 +1,6 @@
 import "./ProductDetails.css";
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
   const genericImageUrl = "../src/assets/board-453758_640.jpg";
@@ -8,6 +8,8 @@ const ProductDetails = () => {
   // Get the productId from the url passed as a parameter
   const { productId } = useParams();
   const [productData, setProductData] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +35,7 @@ const ProductDetails = () => {
 
   return (
     <div className="product">
-      <Link to={`/Products`}>Back</Link>
+      <button onClick={() => navigate(-1)}>Back</button>
       <h3>{productData.name}</h3>
       <p className="description">{productData.description}</p>
       <img

@@ -136,10 +136,6 @@
   background-color: #0056b3;
 }
 
-a:hover {
-  color: white;
-}
-
 /* === Order Form Styling === */
 
 form#orderForm {
