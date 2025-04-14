@@ -82,6 +82,7 @@
 .cartitemimage:hover {
   transform: scale(5);
 }
+
 .cartheaders {
   text-align: center;
   background-color: #919191ab;
