@@ -65,6 +65,7 @@
 .addtocartdisabledbtn,
 .addtocartdisabledbtn:hover {
   background-color: #700;
+  cursor: not-allowed;
 }
 
 .instock {
@@ -87,4 +88,14 @@
   margin-bottom: 20px;
   padding: 10px 30px;
   box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
+
+.addtocartbtn.added {
+  background-color: #28a745;
+  color: white;
+  pointer-events: none;
+}
+
+.addtocartbtn.added:hover {
+  background-color: #28a745;
 }
