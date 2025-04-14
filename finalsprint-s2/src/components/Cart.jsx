@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../context/Cart";
+import { PCBuildContext } from "../context/PCBuild";
 import { Link } from "react-router-dom";
 import "./Cart.css";
 
@@ -169,9 +171,9 @@ const Cart = () => {
           </div>
         )}
         <br />
-        <button className="reviewbtn" onClick={updateOrder}>
+        <Link to="/review" className="reviewbtn" onClick={updateOrder}>
           Review Your Order
-        </button>
+        </Link>
       </div>
     </>
   );
