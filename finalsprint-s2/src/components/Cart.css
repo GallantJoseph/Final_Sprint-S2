@@ -1,10 +1,13 @@
 .cartcontainer {
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: #919191ab;
   border-radius: 16px;
   border: 8px solid rgba(144, 143, 143, 0.888);
   color: white;
   padding: 50px;
   text-align: center;
+  justify-content: center;
   width: 85%;
   margin: 20px auto 40px auto;
   box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
@@ -99,6 +102,8 @@
 
 .reviewbtn {
   padding: 15px 30px;
+  width: fit-content;
+  margin: 32px auto 0px auto;
   font-size: 1rem;
   color: white;
   background-color: #007bff;
@@ -110,4 +115,9 @@
 
 .reviewbtn:hover {
   background-color: #0056b3;
+}
+
+/* Prevent default behavior on Link, to mimic a button */
+a:hover {
+  color: white;
 }

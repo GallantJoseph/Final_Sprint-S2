@@ -1,12 +1,16 @@
 {
   "cart": [
     {
-      "id": "1",
-      "quantity": 1
+      "id": "2",
+      "quantity": 6
     },
     {
-      "id": "2",
-      "quantity": 3
+      "id": "17",
+      "quantity": 4
+    },
+    {
+      "id": "20",
+      "quantity": 4
     }
   ],
   "pcbuild": [
@@ -434,7 +438,7 @@
       "category": "gpu",
       "name": "GeForce RTX 4060 Ti",
       "description": "PCI Express 4.0 x8 ATX Video Card RTX 4060 Ti VENTUS 3X 8G OC",
-      "price": 399.0,
+      "price": 399,
       "image": "../src/assets/thomas-foster-vWgoeEYdtIY-unsplash.jpg",
       "temp": "https://www.newegg.ca/msi-rtx-4060-ti-ventus-3x-8g-oc-nvidia-geforce-rtx-4060-ti-8gb-gddr6/p/N82E16814137798",
       "brand": "NVIDIA",
