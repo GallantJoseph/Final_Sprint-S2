@@ -32,6 +32,10 @@ const Review = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <h2 className="cartheaders">Review Your Order</h2>
