@@ -4,12 +4,13 @@ import { PCBuildContext } from "../context/PCBuild";
 import "./PCBuilder.css";
 
 const PCBuilder = () => {
-  const [productData, setProductData] = useState(null);
+  const [productsData, setProductsData] = useState(null);
   const [pcBuildData, setPcBuildData] = useState(null);
   const [psuSelected, setPsuSelected] = useState(false);
   const [caseSelected, setCaseSelected] = useState(false);
   const [motherboardSelected, setMotherboardSelected] = useState(false);
   const [cpuSelected, setCpuSelected] = useState(false);
+  const [gpuSelected, setGpuSelected] = useState(false);
   const [ramSelected, setRamSelected] = useState(false);
   const [storageSelected, setStorageSelected] = useState(false);
 
@@ -22,7 +23,7 @@ const PCBuilder = () => {
       const response = await fetch("http://localhost:5000/products");
       const products = await response.json();
 
-      setProductData(products);
+      setProductsData(products);
     };
 
     fetchData();
@@ -62,7 +63,7 @@ const PCBuilder = () => {
       <PCBuilderCategory
         title="Power Supply"
         category="psu"
-        data={productData}
+        data={productsData}
         onClick={() => setPsuSelected(true)}
       />
       {psuSelected && (
@@ -70,7 +71,7 @@ const PCBuilder = () => {
           <PCBuilderCategory
             title="Case"
             category="case"
-            data={productData}
+            data={productsData}
             onClick={() => setCaseSelected(true)}
           />
           {caseSelected && (
@@ -78,7 +79,7 @@ const PCBuilder = () => {
               <PCBuilderCategory
                 title="Motherboard"
                 category="motherboard"
-                data={productData}
+                data={productsData}
                 onClick={() => setMotherboardSelected(true)}
               />
               {motherboardSelected && (
@@ -86,40 +87,51 @@ const PCBuilder = () => {
                   <PCBuilderCategory
                     title="Processor"
                     category="cpu"
-                    data={productData}
+                    data={productsData}
                     onClick={() => setCpuSelected(true)}
                   />
                   {cpuSelected && (
                     <>
                       <PCBuilderCategory
-                        title="Memory"
-                        category="ram"
-                        data={productData}
-                        onClick={() => setRamSelected(true)}
+                        title="Graphics Card"
+                        category="gpu"
+                        data={productsData}
+                        onClick={() => setGpuSelected(true)}
                       />
-                      {ramSelected && (
+                      {gpuSelected && (
                         <>
                           <PCBuilderCategory
-                            title="Storage"
-                            category="storage"
-                            data={productData}
-                            onClick={() => setStorageSelected(true)}
+                            title="Memory"
+                            category="ram"
+                            data={productsData}
+                            onClick={() => setRamSelected(true)}
                           />
-                          {storageSelected && (
+                          {ramSelected && (
                             <>
-                              <h3>You're almost done!</h3>
-                              <p>
-                                You have selected all the necessary components
-                                for your build. Click the Submit Build button
-                                once you're satisfied with your selection.
-                              </p>
-                              <button
-                                onClick={(evt) => {
-                                  submitBuild(evt);
-                                }}
-                              >
-                                Submit Build
-                              </button>
+                              <PCBuilderCategory
+                                title="Storage"
+                                category="storage"
+                                data={productsData}
+                                onClick={() => setStorageSelected(true)}
+                              />
+                              {storageSelected && (
+                                <>
+                                  <h3>You're almost done!</h3>
+                                  <p>
+                                    You have selected all the necessary
+                                    components for your build. Click the Submit
+                                    Build button once you're satisfied with your
+                                    selection.
+                                  </p>
+                                  <button
+                                    onClick={(evt) => {
+                                      submitBuild(evt);
+                                    }}
+                                  >
+                                    Submit Build
+                                  </button>
+                                </>
+                              )}
                             </>
                           )}
                         </>

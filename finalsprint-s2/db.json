@@ -5,20 +5,38 @@
       "quantity": 1
     },
     {
-      "id": "1",
-      "quantity": 1
+      "id": "2",
+      "quantity": 3
     }
   ],
   "pcbuild": [
     {
-      "category": "gpu",
-      "id": "1",
-      "quantity": 1
+      "category": "psu",
+      "id": "11"
     },
     {
-      "category": "psu",
-      "id": "1",
-      "quantity": 1
+      "category": "case",
+      "id": "20"
+    },
+    {
+      "category": "motherboard",
+      "id": "7"
+    },
+    {
+      "category": "cpu",
+      "id": "1"
+    },
+    {
+      "category": "gpu",
+      "id": "32"
+    },
+    {
+      "category": "ram",
+      "id": "30"
+    },
+    {
+      "category": "storage",
+      "id": "17"
     }
   ],
   "products": [

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.css";
 
 const Cart = () => {
@@ -25,6 +25,21 @@ const Cart = () => {
       image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
     },
   ]);
+
+  const [productsData, setProductsData] = useState(null);
+  const [cartData, setCartData] = useState(null);
+  const [pcBuildData, sePcBuildData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5000/products");
+      const products = await response.json();
+
+      setProductsData(products);
+    };
+
+    fetchData();
+  }, []);
 
   const handleQuantityChange = (id, quantityChange) => {
     setCartItems((prevItems) =>
