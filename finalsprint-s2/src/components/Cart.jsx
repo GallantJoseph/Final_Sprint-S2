@@ -3,30 +3,7 @@ import { Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: "1",
-      name: "Hard drive",
-      price: 199.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-    {
-      id: "2",
-      name: "Case",
-      price: 99.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-    {
-      id: "3",
-      name: "Monitor",
-      price: 199.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-  ]);
-
+  // Categories dictionary for the PC Build
   const categoriesDict = {
     psu: "Power Supply",
     case: "Case",
@@ -38,8 +15,8 @@ const Cart = () => {
   };
 
   const [productsData, setProductsData] = useState([]);
-  const [cartData, setCartData] = useState([]);
-  const [pcBuildData, setPcBuildData] = useState([]);
+  const cartDataContext = useContext(CartContext);
+  const pcBuildDataContext = useContext(PCBuildContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +31,7 @@ const Cart = () => {
           throw new Error("Couldn't fetch the Products data.");
         }
       } catch (err) {
+        setProductsData([]);
         alert(err);
       }
     };
@@ -70,20 +48,20 @@ const Cart = () => {
         if (resCart.ok) {
           const cData = await resCart.json();
 
-          setCartData(cData);
-          console.log("cart fetched");
+          cartDataContext.setCartItems(cData);
 
           const resPcBuild = await fetch("http://localhost:5000/pcbuild");
 
           if (resPcBuild.ok) {
             const pData = await resPcBuild.json();
 
-            setPcBuildData(pData);
-            console.log("pc build fetched");
+            pcBuildDataContext.setBuildItems(pData);
           } else {
+            pcBuildDataContext.setBuildItems([]);
             throw new Error("Couldn't fetch the PC Builder data.");
           }
         } else {
+          cartDataContext.setCartItems([]);
           throw new Error("Couldn't fetch the Cart data.");
         }
       } catch (err) {
@@ -95,54 +73,67 @@ const Cart = () => {
   }, []);
 
   const handleQuantityChange = (id, quantityChange) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
+    cartDataContext.setCartItems((prevCartData) =>
+      prevCartData.map((item) =>
         item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + quantityChange) }
+          ? { ...item, id: id, quantity: item.quantity + quantityChange }
           : item
       )
     );
   };
 
   const handleRemoveItem = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    cartDataContext.setCartItems((prevItems) =>
+      prevItems.filter((item) => item.id !== id)
+    );
+  };
+
+  const updateOrder = async () => {
+    const resCart = await fetch("http://localhost:5000/cart");
+
+    if (resCart.ok) {
+      const cData = await resCart.json();
+    }
+    console.log("Update");
   };
 
   return (
     <>
       <h2 className="cartheaders">Cart</h2>
       <div className="cartcontainer">
-        {cartItems.length === 0 ? (
+        {cartDataContext == [] ? (
           <p className="emptycart">No items in your cart yet.</p>
         ) : (
           <div className="cartlist">
-            {cartItems.map((item) => (
-              <div key={item.id} className="cartitem">
+            {cartDataContext.cartItems.map((cartItem) => (
+              <div key={cartItem.id} className="cartitem">
                 <img
-                  src={item.image}
-                  alt={item.name}
+                  src={productsData[cartItem.id].image}
+                  alt={productsData[cartItem.id].name}
                   className="cartitemimage"
                 />
 
-                <div className="cartpartname">{item.name}</div>
+                <div className="cartpartname">
+                  {productsData[cartItem.id].name}
+                </div>
 
                 <div className="cartquantitycontrols">
-                  <button onClick={() => handleQuantityChange(item.id, -1)}>
+                  <button onClick={() => handleQuantityChange(cartItem.id, -1)}>
                     -
                   </button>
-                  <span className="quantityNum">{item.quantity}</span>
-                  <button onClick={() => handleQuantityChange(item.id, 1)}>
+                  <span className="quantityNum">{cartItem.quantity}</span>
+                  <button onClick={() => handleQuantityChange(cartItem.id, 1)}>
                     +
                   </button>
                 </div>
 
                 <div className="cartprice">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ${productsData[cartItem.id].price.toFixed(2)}
                 </div>
 
                 <button
                   className="cartremove"
-                  onClick={() => handleRemoveItem(item.id)}
+                  onClick={() => handleRemoveItem(cartItem.id)}
                 >
                   X
                 </button>
@@ -153,26 +144,11 @@ const Cart = () => {
       </div>
       <h2 className="cartheaders">PC Builder</h2>
       <div className="cartcontainer">
-        {cartItems.length === 0 ? (
+        {pcBuildDataContext.buildItems == [] ? (
           <p className="emptycart">No items in your build.</p>
         ) : (
-          /*<div className="cartlist">
-            {cartItems.map((item) => (
-              <div key={item.id} className="cartitem">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="cartitemimage"
-                />
-
-                <div className="cartpartname">{item.name}</div>
-
-                <div className="cartprice">${item.price.toFixed(2)}</div>
-              </div>
-            ))}
-          </div> */
           <div className="cartlist">
-            {pcBuildData.map((item, index) => (
+            {pcBuildDataContext.buildItems.map((item, index) => (
               <div key={index} className="cartitem">
                 <img
                   src={productsData[item.id].image}
@@ -181,17 +157,21 @@ const Cart = () => {
                 />
                 <div className="cartpartname">{productsData[item.id].name}</div>
 
-                <div className="cartprice">
+                <div className="cartcategoryname">
                   {categoriesDict[productsData[item.id].category]}
+                </div>
+
+                <div className="cartprice">
+                  ${productsData[item.id].price.toFixed(2)}
                 </div>
               </div>
             ))}
           </div>
         )}
         <br />
-        <Link to="/Review" className="reviewbtn">
+        <button className="reviewbtn" onClick={updateOrder}>
           Review Your Order
-        </Link>
+        </button>
       </div>
     </>
   );
