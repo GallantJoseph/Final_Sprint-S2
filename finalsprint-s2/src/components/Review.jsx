@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Cart.css";
 
 const Review = () => {
@@ -32,6 +32,8 @@ const Review = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   };
 
+  const navigate = useNavigate();
+
   // Scroll to the top of the page when the component is loaded for the first time
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,11 +43,11 @@ const Review = () => {
     <>
       <h2 className="cartheaders">Review Your Order</h2>
 
-      {/* Back to Cart Button */}
+      {/* Back Button */}
       <div className="review-nav">
-        <Link to="/Cart" className="reviewbtn">
-          Back to Cart
-        </Link>
+        <button className="reviewbtn" onClick={() => navigate(-1)}>
+          Back
+        </button>
       </div>
       <h2 className="cartheaders">Cart</h2>
       {/* Cart Items */}
