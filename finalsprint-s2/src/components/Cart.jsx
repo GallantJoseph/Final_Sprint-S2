@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
@@ -188,7 +189,9 @@ const Cart = () => {
           </div>
         )}
         <br />
-        <button className="reviewbtn">Review Your Order</button>
+        <Link to="/Review" className="reviewbtn">
+          Review Your Order
+        </Link>
       </div>
     </>
   );
