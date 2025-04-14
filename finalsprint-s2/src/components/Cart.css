@@ -68,11 +68,15 @@
 }
 
 .cartquantitycontrols button {
-  background-color: rgb(43, 188, 43);
-  color: black;
+  background-color: rgb(43, 160, 43);
+  color: white;
   width: 30px;
   padding: 4px 10px;
   font-size: 1rem;
+}
+
+.cartquantitycontrols button:hover {
+  background-color: #0056b3;
 }
 
 .quantityNum {
@@ -89,7 +93,7 @@
 
 .cartremove {
   margin-left: 10px;
-  background-color: red;
+  background-color: rgb(160, 43, 43);
   padding: 4px;
   width: 30px;
   border: none;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import ReviewDetails from "./review/ReviewDetails";
 import { useNavigate } from "react-router-dom";
 import { PCBuildContext } from "../context/PCBuild";
 import { CartContext } from "../context/Cart";
@@ -16,38 +17,9 @@ const Review = () => {
     storage: "Storage",
   };
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: "1",
-      name: "Hard drive",
-      price: 199.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-    {
-      id: "2",
-      name: "Case",
-      price: 99.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-    {
-      id: "3",
-      name: "Monitor",
-      price: 199.99,
-      quantity: 1,
-      image: "./src/assets/amd_tomas-malik-zijJwA_RtxY-unsplash.jpg",
-    },
-  ]);
-
   const [productsData, setProductsData] = useState([]);
   const cartDataContext = useContext(CartContext);
   const pcBuildDataContext = useContext(PCBuildContext);
-
-  // Calculate the total price
-  const calculateTotal = () => {
-    return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  };
 
   const navigate = useNavigate();
 
@@ -109,6 +81,7 @@ const Review = () => {
 
                 <div className="cartquantitycontrols">
                   Quantity
+                  <br />
                   <span className="quantityNum">{cartItem.quantity}</span>
                 </div>
 
@@ -158,7 +131,11 @@ const Review = () => {
       <div className="backroundreview">
         <h3>Order Details</h3>
         <div className="cartcontainer">
-          <div className="total-amount">${calculateTotal().toFixed(2)}</div>
+          <ReviewDetails
+            productsData={productsData}
+            cartData={cartDataContext.cartItems}
+            pcBuildData={pcBuildDataContext.buildItems}
+          />
         </div>
       </div>
 
