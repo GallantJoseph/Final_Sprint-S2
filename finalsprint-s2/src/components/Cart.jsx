@@ -26,16 +26,68 @@ const Cart = () => {
     },
   ]);
 
-  const [productsData, setProductsData] = useState(null);
-  const [cartData, setCartData] = useState(null);
-  const [pcBuildData, sePcBuildData] = useState(null);
+  const categoriesDict = {
+    psu: "Power Supply",
+    case: "Case",
+    motherboard: "Motherboard",
+    cpu: "Processor",
+    gpu: "Graphics Card",
+    ram: "Memory",
+    storage: "Storage",
+  };
+
+  const [productsData, setProductsData] = useState([]);
+  const [cartData, setCartData] = useState([]);
+  const [pcBuildData, setPcBuildData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/products");
-      const products = await response.json();
+      try {
+        const resProducts = await fetch("http://localhost:5000/products");
 
-      setProductsData(products);
+        if (resProducts.ok) {
+          const pData = await resProducts.json();
+
+          setProductsData(pData);
+        } else {
+          throw new Error("Couldn't fetch the Products data.");
+        }
+      } catch (err) {
+        alert(err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // When the cart data changes
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resCart = await fetch("http://localhost:5000/cart");
+
+        if (resCart.ok) {
+          const cData = await resCart.json();
+
+          setCartData(cData);
+          console.log("cart fetched");
+
+          const resPcBuild = await fetch("http://localhost:5000/pcbuild");
+
+          if (resPcBuild.ok) {
+            const pData = await resPcBuild.json();
+
+            setPcBuildData(pData);
+            console.log("pc build fetched");
+          } else {
+            throw new Error("Couldn't fetch the PC Builder data.");
+          }
+        } else {
+          throw new Error("Couldn't fetch the Cart data.");
+        }
+      } catch (err) {
+        alert(err);
+      }
     };
 
     fetchData();
@@ -103,7 +155,7 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <p className="emptycart">No items in your build.</p>
         ) : (
-          <div className="cartlist">
+          /*<div className="cartlist">
             {cartItems.map((item) => (
               <div key={item.id} className="cartitem">
                 <img
@@ -115,6 +167,22 @@ const Cart = () => {
                 <div className="cartpartname">{item.name}</div>
 
                 <div className="cartprice">${item.price.toFixed(2)}</div>
+              </div>
+            ))}
+          </div> */
+          <div className="cartlist">
+            {pcBuildData.map((item, index) => (
+              <div key={index} className="cartitem">
+                <img
+                  src={productsData[item.id].image}
+                  alt={productsData[item.id].name}
+                  className="cartitemimage"
+                />
+                <div className="cartpartname">{productsData[item.id].name}</div>
+
+                <div className="cartprice">
+                  {categoriesDict[productsData[item.id].category]}
+                </div>
               </div>
             ))}
           </div>
