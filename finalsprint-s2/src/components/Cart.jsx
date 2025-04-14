@@ -21,7 +21,7 @@ const Cart = () => {
   const cartDataContext = useContext(CartContext);
   const pcBuildDataContext = useContext(PCBuildContext);
 
-  // Fetch products data on first load
+  // Fetch data on first load
   useEffect(() => {
     const fetchData = async () => {
       try {

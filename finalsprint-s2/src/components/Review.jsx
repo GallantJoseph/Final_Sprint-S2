@@ -1,8 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { PCBuildContext } from "../context/PCBuild";
+import { CartContext } from "../context/Cart";
 import "./Cart.css";
 
 const Review = () => {
+  // Categories dictionary for the PC Build
+  const categoriesDict = {
+    psu: "Power Supply",
+    case: "Case",
+    motherboard: "Motherboard",
+    cpu: "Processor",
+    gpu: "Graphics Card",
+    ram: "Memory",
+    storage: "Storage",
+  };
+
   const [cartItems, setCartItems] = useState([
     {
       id: "1",
@@ -27,6 +40,10 @@ const Review = () => {
     },
   ]);
 
+  const [productsData, setProductsData] = useState([]);
+  const cartDataContext = useContext(CartContext);
+  const pcBuildDataContext = useContext(PCBuildContext);
+
   // Calculate the total price
   const calculateTotal = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -37,6 +54,28 @@ const Review = () => {
   // Scroll to the top of the page when the component is loaded for the first time
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  // Fetch data on first load
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resProducts = await fetch("http://localhost:5000/products");
+
+        if (resProducts.ok) {
+          const pData = await resProducts.json();
+
+          setProductsData(pData);
+        } else {
+          throw new Error("Couldn't fetch the Products data.");
+        }
+      } catch (err) {
+        setProductsData([]);
+        alert(err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -52,21 +91,29 @@ const Review = () => {
       <h2 className="cartheaders">Cart</h2>
       {/* Cart Items */}
       <div className="cartcontainer">
-        {cartItems.length === 0 ? (
+        {cartDataContext == [] || productsData.length === 0 ? (
           <p className="emptycart">No items in your cart yet.</p>
         ) : (
           <div className="cartlist">
-            {cartItems.map((item) => (
-              <div key={item.id} className="cartitem">
+            {cartDataContext.cartItems.map((cartItem) => (
+              <div key={cartItem.id} className="cartitem">
                 <img
-                  src={item.image}
-                  alt={item.name}
+                  src={productsData[cartItem.id].image}
+                  alt={productsData[cartItem.id].name}
                   className="cartitemimage"
                 />
-                <div className="cartpartname">{item.name}</div>
-                <div className="cartquantity">Quantity: {item.quantity}</div>
+
+                <div className="cartpartname">
+                  {productsData[cartItem.id].name}
+                </div>
+
+                <div className="cartquantitycontrols">
+                  Quantity
+                  <span className="quantityNum">{cartItem.quantity}</span>
+                </div>
+
                 <div className="cartprice">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ${productsData[cartItem.id].price.toFixed(2)}
                 </div>
               </div>
             ))}
@@ -76,25 +123,35 @@ const Review = () => {
       <h2 className="cartheaders">PC Builder</h2>
       {/* Cart Items */}
       <div className="cartcontainer">
-        {cartItems.length === 0 ? (
-          <p className="emptycart">No items in your cart yet.</p>
-        ) : (
-          <div className="cartlist">
-            {cartItems.map((item) => (
-              <div key={item.id} className="cartitem">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="cartitemimage"
-                />
-                <div className="cartpartname">{item.name}</div>
-                <div className="cartquantity">Quantity: {item.quantity}</div>
-                <div className="cartprice">
-                  ${(item.price * item.quantity).toFixed(2)}
-                </div>
+        {productsData.length > 0 && (
+          <>
+            {pcBuildDataContext.buildItems == [] ? (
+              <p className="emptycart">No items in your build.</p>
+            ) : (
+              <div className="cartlist">
+                {pcBuildDataContext.buildItems.map((item, index) => (
+                  <div key={index} className="cartitem">
+                    <img
+                      src={productsData[item.id].image}
+                      alt={productsData[item.id].name}
+                      className="cartitemimage"
+                    />
+                    <div className="cartpartname">
+                      {productsData[item.id].name}
+                    </div>
+
+                    <div className="cartcategoryname">
+                      {categoriesDict[productsData[item.id].category]}
+                    </div>
+
+                    <div className="cartprice">
+                      ${productsData[item.id].price.toFixed(2)}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
       {/* Total Price */}
