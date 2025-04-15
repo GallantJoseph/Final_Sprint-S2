@@ -1,35 +1,6 @@
 {
   "cart": [],
-  "pcbuild": [
-    {
-      "category": "psu",
-      "id": "11"
-    },
-    {
-      "category": "case",
-      "id": "20"
-    },
-    {
-      "category": "motherboard",
-      "id": "7"
-    },
-    {
-      "category": "cpu",
-      "id": "1"
-    },
-    {
-      "category": "gpu",
-      "id": "32"
-    },
-    {
-      "category": "ram",
-      "id": "30"
-    },
-    {
-      "category": "storage",
-      "id": "17"
-    }
-  ],
+  "pcbuild": [],
   "products": [
     {
       "id": "1",

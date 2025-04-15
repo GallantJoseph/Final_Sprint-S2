@@ -1,117 +1,129 @@
-import { useEffect, useState, useContext } from "react";
-import { PCBuildContext } from "../../context/PCBuild";
-import "./PCBuilderCategory.css";
+import "./ProductDetails.css";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-const PCBuilderCategory = ({ title, category, data, onClick }) => {
+const ProductDetails = () => {
   const genericImageUrl = "../src/assets/board-453758_640.jpg";
-  const [productsData, setProductsData] = useState(null);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [cart, setCart] = useState([]);
 
-  const pcBuild = useContext(PCBuildContext);
+  // Get the productId from the url passed as a parameter
+  const { productId } = useParams();
+  const [productData, setProductData] = useState({});
+  const [cart, setCart] = useState([]);
+  const [addedToCartIds, setAddedToCartIds] = useState([]); // Track products added to the cart
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchCart = async () => {
-      const res = await fetch("http://localhost:5000/cart");
-      const cartData = await res.json();
-      setCart(cartData);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/products/${productId}`
+        );
+
+        if (response.status === 404) {
+          throw new Error("Invalid productID input.");
+        } else {
+          const products = await response.json();
+          setProductData(products);
+        }
+      } catch (error) {
+        console.log(error);
+        setProductData({});
+      }
+
+      const cartRes = await fetch("http://localhost:5000/cart");
+      const cartDat = await cartRes.json();
+      setCart(cartDat);
+      setAddedToCartIds(cartDat.map((item) => item.id)); // Initialize addedToCartIds with cart items
     };
 
-    fetchCart();
-  }, []);
+    fetchData();
+  }, [productId]);
 
-  useEffect(() => {
-    if (data) {
-      setProductsData(data.filter((item) => item.category === category));
+  async function fetchItem(id) {
+    const res = await fetch(`http://localhost:5000/cart/${id}`);
+    const dat = await res.json();
+    return dat;
+  }
+
+  async function handleAddToCart(productId) {
+    let found = false;
+    for (const element of cart) {
+      if (element.id === productId) {
+        found = true;
+      }
     }
-  }, [data, category]);
 
-  const getAvailableStock = (productId, quantity_on_hand) => {
-    const cartItem = cart.find((item) => item.id === productId);
-    return quantity_on_hand - (cartItem?.quantity || 0);
-  };
+    if (found) {
+      const recarted = await fetchItem(productId);
+      const foundResp = await fetch(`http://localhost:5000/cart/${productId}`, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ ...recarted, quantity: recarted.quantity + 1 }),
+      });
 
-  const updateProductStock = async (product) => {
-    const updatedQuantity = product.quantity_on_hand - 1;
+      setCart(
+        cart.map((item) =>
+          item.id === productId
+            ? { ...recarted, quantity: recarted.quantity + 1 }
+            : item
+        )
+      );
+      setAddedToCartIds((prevIds) => [...prevIds, productId]); // Add the product to the added list
+    } else {
+      const resp = await fetch("http://localhost:5000/cart", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ id: productId, quantity: 1 }),
+      });
 
-    const updatedProduct = { ...product, quantity_on_hand: updatedQuantity };
+      const data = await resp.json();
 
-    await fetch(`http://localhost:5000/products/${product.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    });
+      setCart([...cart, data]);
+      setAddedToCartIds((prevIds) => [...prevIds, productId]); // Add the product to the added list
+    }
+  }
 
-    // Optional: update local state
-    setProductsData((prev) =>
-      prev.map((p) => (p.id === product.id ? updatedProduct : p))
-    );
-  };
-
-  const handleSelect = async (product) => {
-    const available = getAvailableStock(product.id, product.quantity_on_hand);
-
-    if (available > 0) {
-      await updateProductStock(product); // ✅ update json file via server
-      setSelectedProduct(product);
-      onClick(product);
+  // Render the "Add to Cart" button or the checkmark based on if it's in the cart
+  const renderAddToCartButton = (obj) => {
+    if (obj.quantity_on_hand === 0) {
+      return (
+        <button className="addtocartdisabledbtn" disabled={true}>
+          X
+        </button>
+      );
+    } else if (addedToCartIds.includes(obj.id)) {
+      return (
+        <button className="addtocartbtn added" disabled>
+          ✔️ Added
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="addtocartbtn"
+          onClick={() => handleAddToCart(obj.id)}
+        >
+          Add to Cart
+        </button>
+      );
     }
   };
 
   return (
-    <div className="product-category">
-      <h2>{title}</h2>
-      <div className="products">
-        {productsData &&
-          productsData.map((product, index) => {
-            const available = getAvailableStock(
-              product.id,
-              product.quantity_on_hand
-            );
-
-            return (
-              <li key={index}>
-                <h3>{product.name}</h3>
-                <p className="description">{product.description}</p>
-
-                <img
-                  src={product.image !== "" ? product.image : genericImageUrl}
-                  width={"100%"}
-                  alt={product.name}
-                />
-
-                <p className="stock">
-                  {available > 0 ? (
-                    <span className="instock">In Stock: {available}</span>
-                  ) : (
-                    <span className="outofstock">Out of Stock</span>
-                  )}
-                </p>
-
-                <p className="price">
-                  $ {product.price}
-                  <br />
-                  <button
-                    onClick={() => handleSelect(product)}
-                    className={`selectbutton ${
-                      selectedProduct?.id === product.id ? "selected" : ""
-                    }`}
-                    disabled={available === 0}
-                  >
-                    {selectedProduct?.id === product.id && (
-                      <span className="checkmark">✔</span>
-                    )}
-                    Select
-                  </button>
-                </p>
-              </li>
-            );
-          })}
-      </div>
+    <div className="product">
+      <button onClick={() => navigate(-1)}>Back</button>
+      <h3>{productData.name}</h3>
+      <p className="description">{productData.description}</p>
+      <img
+        src={productData.image !== "" ? productData.image : genericImageUrl}
+        width={"200"}
+        alt={productData.name}
+      />
+      <p>Quantity on hand: {productData.quantity_on_hand}</p>
+      {renderAddToCartButton(productData)}
     </div>
   );
 };
 
-export default PCBuilderCategory;
+export default ProductDetails;
