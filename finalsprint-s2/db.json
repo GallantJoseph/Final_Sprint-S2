@@ -1,16 +1,28 @@
 {
   "cart": [
     {
-      "id": "2",
-      "quantity": 6
-    },
-    {
       "id": "17",
       "quantity": 4
     },
     {
       "id": "20",
       "quantity": 4
+    },
+    {
+      "id": "5",
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "quantity": 1
+    },
+    {
+      "id": "1",
+      "quantity": 5
+    },
+    {
+      "id": "35",
+      "quantity": 1
     }
   ],
   "pcbuild": [
