@@ -23,9 +23,6 @@ const PCBuilderCategory = ({ title, category, data, onClick }) => {
   const handleSelect = (product) => {
     setSelectedProduct(product);
     onClick(product); // If you need to pass the selected product to the parent component
-
-    //console.log(pcBuild);
-    console.log(product.id);
   };
 
   return (

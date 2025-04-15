@@ -5,7 +5,6 @@ import "./PCBuilder.css";
 
 const PCBuilder = () => {
   const [productsData, setProductsData] = useState(null);
-  const [pcBuildData, setPcBuildData] = useState(null);
   const [psuSelected, setPsuSelected] = useState(false);
   const [caseSelected, setCaseSelected] = useState(false);
   const [motherboardSelected, setMotherboardSelected] = useState(false);
@@ -15,8 +14,7 @@ const PCBuilder = () => {
   const [storageSelected, setStorageSelected] = useState(false);
 
   // Context that stores the current PC Build data.
-  const pcBuild = useContext(PCBuildContext);
-  console.log(pcBuild.buildItems);
+  const pcBuildContext = useContext(PCBuildContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,27 +27,67 @@ const PCBuilder = () => {
     fetchData();
   }, []);
 
-  const updateBuild = async (id) => {
-    // const response = await fetch("http://localhost:5000/pcbuild", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body: `{
-    //   "category": "gpu",
-    //   "id": "1",
-    //   "quantity": 1}`,
-    // });
-    // const pcBuild = await response.json();
-    // console.log(pcBuild);
+  const updateBuild = async (id, category) => {
+    let idExists = false;
+
+    for (const element of pcBuildContext.buildItems) {
+      console.log(element);
+      if (element.category === category) {
+        idExists = true;
+      }
+    }
+
+    if (idExists) {
+      pcBuildContext.setBuildItems(
+        pcBuildContext.buildItems.map((buildItem) => {
+          if (buildItem.category === category) {
+            buildItem.id = id;
+          }
+        })
+      );
+    } else {
+      pcBuildContext.setBuildItems([
+        ...pcBuildContext.buildItems,
+        { category: category, id: id },
+      ]);
+    }
+
+    // Update PC Build
+    // const buildItem = (
+    //   await fetch(`http://localhost:5000/pcbuild?category=${category}`)
+    // ).json();
+    // const updItem = { ...buildItem, id: id };
+    // console.log(JSON.stringify(updItem));
+    // const res = await fetch(
+    //   `http://localhost:5000/pcbuild?category=${category}`,
+    //   {
+    //     method: "PUT",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(updItem),
+    //   }
+    // );
   };
 
-  const submitBuild = (evt) => {
+  const clearPcBuild = async () => {
+    const response = await fetch("http://localhost:5000/pcbuild");
+
+    const pcBuild = await response.json();
+
+    pcBuild.forEach(async (item) => {
+      await fetch(`http://localhost:5000/pcbuild/${item.id}`, {
+        method: "DELETE",
+      });
+    });
+  };
+
+  const submitBuild = async (evt) => {
+    await clearPcBuild();
+    await updateBuild();
     evt.preventDefault();
     alert("Submitted!");
   };
-
-  updateBuild(1);
 
   return (
     <section id="pcbuilder-section">
@@ -64,7 +102,10 @@ const PCBuilder = () => {
         title="Power Supply"
         category="psu"
         data={productsData}
-        onClick={() => setPsuSelected(true)}
+        onClick={(product) => {
+          setPsuSelected(true);
+          updateBuild(product.id, product.category);
+        }}
       />
       {psuSelected && (
         <>

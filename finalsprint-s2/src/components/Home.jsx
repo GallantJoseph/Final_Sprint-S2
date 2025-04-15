@@ -12,9 +12,6 @@ const Home = () => {
   const handleBuildNow = () => {
     navigate("/PCBuilder");
   };
-  const handleMeetStaff = () => {
-    navigate("/Contact");
-  };
   return (
     <div className="homecontainer">
       <header className="homesection homeimg">
