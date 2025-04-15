@@ -89,7 +89,15 @@ const Review = () => {
 
       {/* Back Button */}
       <div className="review-nav">
-        <button className="reviewbtn" onClick={() => navigate(-1)}>
+        <button
+          className="reviewbtn"
+          onClick={() => {
+            navigate(-1);
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 100);
+          }}
+        >
           Back
         </button>
       </div>

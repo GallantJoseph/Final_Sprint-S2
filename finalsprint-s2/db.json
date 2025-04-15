@@ -1,48 +1,6 @@
 {
-  "cart": [
-    {
-      "id": "1",
-      "quantity": 2
-    },
-    {
-      "id": "2",
-      "quantity": 1
-    },
-    {
-      "id": "4",
-      "quantity": 1
-    }
-  ],
-  "pcbuild": [
-    {
-      "id": "11",
-      "category": "psu"
-    },
-    {
-      "id": "33",
-      "category": "gpu"
-    },
-    {
-      "id": "20",
-      "category": "case"
-    },
-    {
-      "id": "2",
-      "category": "cpu"
-    },
-    {
-      "id": "18",
-      "category": "storage"
-    },
-    {
-      "id": "27",
-      "category": "ram"
-    },
-    {
-      "id": "8",
-      "category": "motherboard"
-    }
-  ],
+  "cart": [],
+  "pcbuild": [],
   "products": [
     {
       "id": "1",
