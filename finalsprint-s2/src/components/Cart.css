@@ -186,7 +186,7 @@ form#orderForm {
 .reviewbtn:hover {
   background-color: #0056b3;
 }
-/* === Order Form Styling === */
+/* Order Formm Styling */
 
 form#orderForm {
   display: flex;
@@ -231,4 +231,85 @@ form#orderForm {
 
 .reviewbtn:hover {
   background-color: #0056b3;
+}
+
+/* Receipt Style for Order Details */
+
+.receipt {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  border: 2px solid #333;
+  color: black;
+  padding: 30px;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
+
+.receipt-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.receipt-section {
+  margin-bottom: 25px;
+}
+
+.receipt-section h4 {
+  border-bottom: 2px dashed #999; /* dassed adds the nice reciept effect*/
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 1rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 2px solid #000;
+}
+.form-element select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #616161;
+  font-size: 16px;
+  background-color: white;
+}
+
+/* Extra tweak for better alignment on grouped form fields */
+.form-element-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-element-row .form-element {
+  flex: 1;
+  min-width: 48%;
+}
+.total {
+  margin: auto;
+  margin-top: 20px;
+  width: fit-content;
+  text-align: center;
+  padding: 0px 10px;
+  border-radius: 8px;
+  border: 2px solid grey;
+  background-color: rgba(255, 255, 255, 0.781);
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
