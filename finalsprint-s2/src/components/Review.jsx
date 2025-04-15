@@ -68,13 +68,13 @@ const Review = () => {
 
   // Calculate total cost for cart
   const cartTotal = cartDataContext.cartItems.reduce((total, item) => {
-    const product = productsData[item.id];
+    const product = productsData[item.id - 1];
     return product ? total + product.price * item.quantity : total;
   }, 0);
 
   // Calculate total cost for PC Builder
   const pcBuildTotal = pcBuildDataContext.buildItems.reduce((total, item) => {
-    const product = productsData[item.id];
+    const product = productsData[item.id - 1];
     return product ? total + product.price : total;
   }, 0);
 
@@ -104,13 +104,13 @@ const Review = () => {
             {cartDataContext.cartItems.map((cartItem) => (
               <div key={cartItem.id} className="cartitem">
                 <img
-                  src={productsData[cartItem.id].image}
-                  alt={productsData[cartItem.id].name}
+                  src={productsData[cartItem.id - 1].image}
+                  alt={productsData[cartItem.id - 1].name}
                   className="cartitemimage"
                 />
 
                 <div className="cartpartname">
-                  {productsData[cartItem.id].name}
+                  {productsData[cartItem.id - 1].name}
                 </div>
 
                 <div className="cartquantitycontrols">
@@ -120,7 +120,7 @@ const Review = () => {
                 </div>
 
                 <div className="cartprice">
-                  ${productsData[cartItem.id].price.toFixed(2)}
+                  ${productsData[cartItem.id - 1].price.toFixed(2)}
                 </div>
               </div>
             ))}
@@ -143,20 +143,20 @@ const Review = () => {
                 {pcBuildDataContext.buildItems.map((item, index) => (
                   <div key={index} className="cartitem">
                     <img
-                      src={productsData[item.id].image}
-                      alt={productsData[item.id].name}
+                      src={productsData[item.id - 1].image}
+                      alt={productsData[item.id - 1].name}
                       className="cartitemimage"
                     />
                     <div className="cartpartname">
-                      {productsData[item.id].name}
+                      {productsData[item.id - 1].name}
                     </div>
 
                     <div className="cartcategoryname">
-                      {categoriesDict[productsData[item.id].category]}
+                      {categoriesDict[productsData[item.id - 1].category]}
                     </div>
 
                     <div className="cartprice">
-                      ${productsData[item.id].price.toFixed(2)}
+                      ${productsData[item.id - 1].price.toFixed(2)}
                     </div>
                   </div>
                 ))}
@@ -178,10 +178,10 @@ const Review = () => {
           <div className="receipt-section">
             <h4> Cart Items</h4>
             {cartDataContext.cartItems.map((item) => {
-              const product = productsData[item.id];
+              const product = productsData[item.id - 1];
               if (!product) return null;
               return (
-                <div key={item.id} className="receipt-row">
+                <div key={item.id - 1} className="receipt-row">
                   <span>
                     {product.name} x{item.quantity}
                   </span>
@@ -194,7 +194,7 @@ const Review = () => {
           <div className="receipt-section">
             <h4>PC Build</h4>
             {pcBuildDataContext.buildItems.map((item, index) => {
-              const product = productsData[item.id];
+              const product = productsData[item.id - 1];
               if (!product) return null;
               return (
                 <div key={index} className="receipt-row">

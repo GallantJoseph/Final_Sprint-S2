@@ -112,13 +112,13 @@ const Cart = () => {
 
   // Calculate total cost for cart
   const cartTotal = cartDataContext.cartItems.reduce((total, item) => {
-    const product = productsData[item.id];
+    const product = productsData[item.id - 1];
     return product ? total + product.price * item.quantity : total;
   }, 0);
 
   // Calculate total cost for PC Builder
   const pcBuildTotal = pcBuildDataContext.buildItems.reduce((total, item) => {
-    const product = productsData[item.id];
+    const product = productsData[item.id - 1];
     return product ? total + product.price : total;
   }, 0);
 
