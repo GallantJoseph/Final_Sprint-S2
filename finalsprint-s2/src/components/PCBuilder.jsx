@@ -28,29 +28,49 @@ const PCBuilder = () => {
   }, []);
 
   const updateBuild = async (id, category) => {
-    let idExists = false;
+    let componentCatExists = false;
 
+    // Check if a component from the same category already exists
     for (const element of pcBuildContext.buildItems) {
-      console.log(element);
       if (element.category === category) {
-        idExists = true;
+        componentCatExists = true;
       }
     }
 
-    if (idExists) {
+    if (componentCatExists) {
+      // Update the existing one only
       pcBuildContext.setBuildItems(
         pcBuildContext.buildItems.map((buildItem) => {
           if (buildItem.category === category) {
             buildItem.id = id;
+            return buildItem;
+          } else {
+            return buildItem;
           }
         })
       );
     } else {
+      // Add the new component
       pcBuildContext.setBuildItems([
         ...pcBuildContext.buildItems,
         { category: category, id: id },
       ]);
     }
+
+    // if (idExists) {
+    //   pcBuildContext.setBuildItems(
+    //     pcBuildContext.buildItems.map((buildItem) => {
+    //       if (buildItem.category === category) {
+    //         buildItem.id = id;
+    //       }
+    //     })
+    //   );
+    // } else {
+    //   pcBuildContext.setBuildItems([
+    //     ...pcBuildContext.buildItems,
+    //     { category: category, id: id },
+    //   ]);
+    // }
 
     // Update PC Build
     // const buildItem = (
@@ -83,9 +103,10 @@ const PCBuilder = () => {
   };
 
   const submitBuild = async (evt) => {
-    await clearPcBuild();
-    await updateBuild();
-    evt.preventDefault();
+    // await clearPcBuild();
+    // await updateBuild();
+    // evt.preventDefault();
+    console.log(pcBuildContext.buildItems);
     alert("Submitted!");
   };
 
@@ -113,7 +134,10 @@ const PCBuilder = () => {
             title="Case"
             category="case"
             data={productsData}
-            onClick={() => setCaseSelected(true)}
+            onClick={(product) => {
+              setCaseSelected(true);
+              updateBuild(product.id, product.category);
+            }}
           />
           {caseSelected && (
             <>
@@ -121,7 +145,10 @@ const PCBuilder = () => {
                 title="Motherboard"
                 category="motherboard"
                 data={productsData}
-                onClick={() => setMotherboardSelected(true)}
+                onClick={(product) => {
+                  setMotherboardSelected(true);
+                  updateBuild(product.id, product.category);
+                }}
               />
               {motherboardSelected && (
                 <>
@@ -129,7 +156,10 @@ const PCBuilder = () => {
                     title="Processor"
                     category="cpu"
                     data={productsData}
-                    onClick={() => setCpuSelected(true)}
+                    onClick={(product) => {
+                      setCpuSelected(true);
+                      updateBuild(product.id, product.category);
+                    }}
                   />
                   {cpuSelected && (
                     <>
@@ -137,7 +167,10 @@ const PCBuilder = () => {
                         title="Graphics Card"
                         category="gpu"
                         data={productsData}
-                        onClick={() => setGpuSelected(true)}
+                        onClick={(product) => {
+                          setGpuSelected(true);
+                          updateBuild(product.id, product.category);
+                        }}
                       />
                       {gpuSelected && (
                         <>
@@ -145,7 +178,10 @@ const PCBuilder = () => {
                             title="Memory"
                             category="ram"
                             data={productsData}
-                            onClick={() => setRamSelected(true)}
+                            onClick={(product) => {
+                              setRamSelected(true);
+                              updateBuild(product.id, product.category);
+                            }}
                           />
                           {ramSelected && (
                             <>
@@ -153,7 +189,10 @@ const PCBuilder = () => {
                                 title="Storage"
                                 category="storage"
                                 data={productsData}
-                                onClick={() => setStorageSelected(true)}
+                                onClick={(product) => {
+                                  setStorageSelected(true);
+                                  updateBuild(product.id, product.category);
+                                }}
                               />
                               {storageSelected && (
                                 <>
