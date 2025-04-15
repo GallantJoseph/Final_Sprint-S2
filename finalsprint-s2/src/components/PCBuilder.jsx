@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import PCBuilderCategory from "./pcbuilder/PCBuilderCategory";
 import { PCBuildContext } from "../context/PCBuild";
 import "./PCBuilder.css";
+import { useNavigate } from "react-router-dom";
 
 const PCBuilder = () => {
   const [productsData, setProductsData] = useState(null);
@@ -56,40 +57,9 @@ const PCBuilder = () => {
         { category: category, id: id },
       ]);
     }
-
-    // if (idExists) {
-    //   pcBuildContext.setBuildItems(
-    //     pcBuildContext.buildItems.map((buildItem) => {
-    //       if (buildItem.category === category) {
-    //         buildItem.id = id;
-    //       }
-    //     })
-    //   );
-    // } else {
-    //   pcBuildContext.setBuildItems([
-    //     ...pcBuildContext.buildItems,
-    //     { category: category, id: id },
-    //   ]);
-    // }
-
-    // Update PC Build
-    // const buildItem = (
-    //   await fetch(`http://localhost:5000/pcbuild?category=${category}`)
-    // ).json();
-    // const updItem = { ...buildItem, id: id };
-    // console.log(JSON.stringify(updItem));
-    // const res = await fetch(
-    //   `http://localhost:5000/pcbuild?category=${category}`,
-    //   {
-    //     method: "PUT",
-    //     headers: {
-    //       "Content-type": "application/json",
-    //     },
-    //     body: JSON.stringify(updItem),
-    //   }
-    // );
   };
 
+  // Clear the build from the json server
   const clearPcBuild = async () => {
     const response = await fetch("http://localhost:5000/pcbuild");
 
@@ -102,12 +72,26 @@ const PCBuilder = () => {
     });
   };
 
+  // Save the build to the json server
+  const savePcBuild = async () => {
+    pcBuildContext.buildItems.forEach(async (buildItem) => {
+      await fetch(`http://localhost:5000/pcbuild`, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(buildItem),
+      });
+    });
+  };
+
   const submitBuild = async (evt) => {
-    // await clearPcBuild();
-    // await updateBuild();
-    // evt.preventDefault();
-    console.log(pcBuildContext.buildItems);
-    alert("Submitted!");
+    await clearPcBuild();
+    await savePcBuild();
+
+    evt.preventDefault();
+    alert(
+      "Build confirmed! Please review the cart to proceed with your order."
+    );
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
