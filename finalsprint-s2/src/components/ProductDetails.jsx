@@ -1,86 +1,117 @@
-import "./ProductDetails.css";
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { PCBuildContext } from "../../context/PCBuild";
+import "./PCBuilderCategory.css";
 
-const ProductDetails = () => {
-	const genericImageUrl = "../src/assets/board-453758_640.jpg";
+const PCBuilderCategory = ({ title, category, data, onClick }) => {
+  const genericImageUrl = "../src/assets/board-453758_640.jpg";
+  const [productsData, setProductsData] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
 
-	// Get the productId from the url passed as a parameter
-	const { productId } = useParams();
-	const [productData, setProductData] = useState([]);
-	const [cart, setCart] = useState([]);
+  const pcBuild = useContext(PCBuildContext);
 
-	const navigate = useNavigate();
+  useEffect(() => {
+    const fetchCart = async () => {
+      const res = await fetch("http://localhost:5000/cart");
+      const cartData = await res.json();
+      setCart(cartData);
+    };
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await fetch(`http://localhost:5000/products/${productId}`);
+    fetchCart();
+  }, []);
 
-				if (response.status === 404) {
-					throw new Error("Invalid productID input.");
-				} else {
-					const products = await response.json();
-					setProductData(products);
-				}
-			} catch (error) {
-				console.log(error);
-				setProductData([]);
-			}
+  useEffect(() => {
+    if (data) {
+      setProductsData(data.filter((item) => item.category === category));
+    }
+  }, [data, category]);
 
-			const cartRes = await fetch("http://localhost:5000/cart");
-			const cartDat = await cartRes.json();
-			setCart(cartDat);
-		};
+  const getAvailableStock = (productId, quantity_on_hand) => {
+    const cartItem = cart.find((item) => item.id === productId);
+    return quantity_on_hand - (cartItem?.quantity || 0);
+  };
 
-		fetchData();
-	}, []);
+  const updateProductStock = async (product) => {
+    const updatedQuantity = product.quantity_on_hand - 1;
 
-	async function fetchItem(id) {
-		const res = await fetch(`http://localhost:5000/cart/${id}`);
-		const dat = await res.json();
-		return dat;
-	}
+    const updatedProduct = { ...product, quantity_on_hand: updatedQuantity };
 
-	async function handleAddToCart(productId) {
-		let found = false;
-		for (const element of cart) {
-			if (element.id === productId) {
-				found = true;
-			}
-		}
+    await fetch(`http://localhost:5000/products/${product.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    });
 
-		if (found) {
-			const recarted = await fetchItem(productId);
-			const foundResp = await fetch(`http://localhost:5000/cart/${productId}`, {
-				method: "PUT",
-				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({ ...recarted, quantity: recarted.quantity + 1 }),
-			});
+    // Optional: update local state
+    setProductsData((prev) =>
+      prev.map((p) => (p.id === product.id ? updatedProduct : p))
+    );
+  };
 
-			setCart(cart.map((item) => (item.id === productId ? { ...recarted, quantity: recarted.quantity + 1 } : item)));
-		} else {
-			const resp = await fetch("http://localhost:5000/cart", {
-				method: "POST",
-				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({ id: productId, quantity: 1 }),
-			});
+  const handleSelect = async (product) => {
+    const available = getAvailableStock(product.id, product.quantity_on_hand);
 
-			const data = await resp.json();
+    if (available > 0) {
+      await updateProductStock(product); // ✅ update json file via server
+      setSelectedProduct(product);
+      onClick(product);
+    }
+  };
 
-			setCart([...cart, data]);
-		}
-	}
+  return (
+    <div className="product-category">
+      <h2>{title}</h2>
+      <div className="products">
+        {productsData &&
+          productsData.map((product, index) => {
+            const available = getAvailableStock(
+              product.id,
+              product.quantity_on_hand
+            );
 
-	return (
-		<div className="product">
-			<button onClick={() => navigate(-1)}>Back</button>
-			<h3>{productData.name}</h3>
-			<p className="description">{productData.description}</p>
-			<img src={productData.image !== "" ? productData.image : genericImageUrl} width={"200"} />
-			<p>Quantity on hand: {productData.quantity_on_hand}</p>
-			<button onClick={() => handleAddToCart(productId)}>Add to Cart</button>
-		</div>
-	);
+            return (
+              <li key={index}>
+                <h3>{product.name}</h3>
+                <p className="description">{product.description}</p>
+
+                <img
+                  src={product.image !== "" ? product.image : genericImageUrl}
+                  width={"100%"}
+                  alt={product.name}
+                />
+
+                <p className="stock">
+                  {available > 0 ? (
+                    <span className="instock">In Stock: {available}</span>
+                  ) : (
+                    <span className="outofstock">Out of Stock</span>
+                  )}
+                </p>
+
+                <p className="price">
+                  $ {product.price}
+                  <br />
+                  <button
+                    onClick={() => handleSelect(product)}
+                    className={`selectbutton ${
+                      selectedProduct?.id === product.id ? "selected" : ""
+                    }`}
+                    disabled={available === 0}
+                  >
+                    {selectedProduct?.id === product.id && (
+                      <span className="checkmark">✔</span>
+                    )}
+                    Select
+                  </button>
+                </p>
+              </li>
+            );
+          })}
+      </div>
+    </div>
+  );
 };
-export default ProductDetails;
+
+export default PCBuilderCategory;
