@@ -34,6 +34,8 @@ const Review = () => {
     cvv: "",
   });
 
+  const [formErrors, setFormErrors] = useState([]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -82,6 +84,88 @@ const Review = () => {
   const taxRate = 0.15;
   const taxAmount = grandTotal * taxRate;
   const finalTotal = grandTotal + taxAmount;
+
+  function validateOrderFields() {
+    let errors = [];
+
+    // Regular expressions
+    const phoneRegex = /^\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4}$/;
+    const emailRegex = /^\w+\@\w+(\.\w{2,})+$/;
+    const addressRegex = /^\d+(\-?[\d\w]+)*([\,\s]\s?\w+)+$/; // Accepts a: "#(-#*/X*), Street Name" Format, (i.e. 123-A, Main Street)
+    const postalCodeRegex = /^[A-Za-z]\d[A-Za-z][\s-]?\d[A-Za-z]\d$/;
+
+    // Validate Name
+    if (formData.name.trim() === "") {
+      errors.push("Enter Your Name");
+    }
+
+    // Validate Phone Number
+    if (formData.phone.trim() === "") {
+      errors.push("Enter Your Phone Number");
+    } else if (!phoneRegex.test(formData.phone)) {
+      errors.push("Invalid Phone Number");
+    }
+
+    // Validate Email
+    if (formData.email.trim() === "") {
+      errors.push("Enter Your Email");
+    } else if (!emailRegex.test(formData.email)) {
+      errors.push("Invalid Email");
+    }
+
+    // Validate Address
+    if (formData.address.trim() === "") {
+      errors.push("Enter Your Address");
+    } else if (!addressRegex.test(formData.address)) {
+      errors.push("Invalid Address");
+    }
+
+    // Validate City
+    if (formData.city.trim() === "") {
+      errors.push("Enter Your City");
+    }
+
+    // Validate Postal Code
+    if (formData.postalCode.trim() === "") {
+      errors.push("Enter Your Postal Code");
+    } else if (!postalCodeRegex.test(formData.postalCode)) {
+      errors.push("Invalid Postal Code");
+    }
+
+    // Validate Province
+    if (formData.province === "") {
+      errors.push("Select a Province");
+    }
+
+    // Validate the Credit Card details
+
+    let creditCardRegex = /^\d{16}$/;
+    let expiryDateRegex = /^\d{2}\/\d{2}$/;
+    let cvvNumRegex = /^\d{3,4}$/;
+
+    if (formData.cardNumber === "") {
+      errors.push("Enter a Credit Card Number");
+    } else if (!creditCardRegex.test(formData.cardNumber)) {
+      errors.push("Invalid Credit Card Number");
+    }
+
+    if (formData.expiry === "") {
+      errors.push("Enter an Expiry Date");
+    } else if (!expiryDateRegex.test(formData.expiry)) {
+      errors.push("Invalid Expiry Date");
+    }
+
+    if (formData.cvv === "") {
+      errors.push("Enter a CVV Number");
+    } else if (!cvvNumRegex.test(formData.cvv)) {
+      errors.push("Invalid CVV Number");
+    }
+
+    setFormErrors(errors);
+
+    // Return true if there are no errors
+    return errors.length == 0;
+  }
 
   return (
     <>
@@ -382,11 +466,36 @@ const Review = () => {
           <button
             className="reviewbtn"
             onClick={() => {
-              alert("Order is on the way");
+              if (validateOrderFields()) {
+                alert("Your order has been confirmed!");
+
+                // Clear fields
+                setFormData({
+                  name: "",
+                  phone: "",
+                  email: "",
+                  address: "",
+                  city: "",
+                  postalCode: "",
+                  province: "",
+                  cardNumber: "",
+                  expiry: "",
+                  cvv: "",
+                });
+              }
             }}
           >
             Order Now
           </button>
+          <div className="errors">
+            <p>
+              <ul>
+                {formErrors.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+              </ul>
+            </p>
+          </div>
         </div>
       </div>
     </>
