@@ -63,6 +63,7 @@ const Cart = () => {
     };
 
     fetchData();
+    console.log(pcBuildDataContext.buildItems);
   }, []);
 
   const handleQuantityChange = async (id, quantityChange) => {
@@ -108,6 +109,21 @@ const Cart = () => {
     cartDataContext.setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== id)
     );
+  };
+
+  // Clear the build from the json server
+  const clearPcBuild = async () => {
+    const response = await fetch("http://localhost:5000/pcbuild");
+
+    const pcBuild = await response.json();
+
+    pcBuild.forEach(async (item) => {
+      await fetch(`http://localhost:5000/pcbuild/${item.id}`, {
+        method: "DELETE",
+      });
+    });
+
+    pcBuildDataContext.setBuildItems([]);
   };
 
   // Calculate total cost for cart
@@ -207,6 +223,19 @@ const Cart = () => {
         )}
         <div className="total">
           <h3>PC Builder Total: ${pcBuildTotal.toFixed(2)}</h3>
+          {pcBuildTotal > 0 && (
+            <button
+              className="reviewbtn"
+              onClick={() => {
+                if (confirm("Are you sure you want to reset your build?")) {
+                  clearPcBuild();
+                  console.log("Deleted");
+                }
+              }}
+            >
+              Clear Build
+            </button>
+          )}
         </div>
       </div>
 
