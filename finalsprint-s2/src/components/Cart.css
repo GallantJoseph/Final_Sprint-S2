@@ -217,6 +217,7 @@ form#orderForm {
   border-radius: 6px;
   border: 1px solid #616161;
   font-size: 16px;
+  color: #000;
 }
 
 .reviewbtn {
@@ -291,6 +292,7 @@ form#orderForm {
   border: 1px solid #616161;
   font-size: 16px;
   background-color: white;
+  color: black;
 }
 
 /* Extra tweak for better alignment on grouped form fields */
@@ -315,7 +317,9 @@ form#orderForm {
   background-color: rgba(255, 255, 255, 0.781);
   box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
 }
-
+.errors {
+  box-shadow: 8px 8px 14px 2px rgba(0, 0, 0, 0.529);
+}
 .errors li {
   text-align: left;
   color: red;

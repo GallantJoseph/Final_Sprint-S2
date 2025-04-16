@@ -487,15 +487,15 @@ const Review = () => {
           >
             Order Now
           </button>
-          <div className="errors">
-            <p>
+          {formErrors.length > 0 && (
+            <div className="errors">
               <ul>
                 {formErrors.map((error, index) => (
                   <li key={index}>{error}</li>
                 ))}
               </ul>
-            </p>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </>
